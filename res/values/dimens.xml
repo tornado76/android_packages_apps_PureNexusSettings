@@ -39,4 +39,7 @@
     <dimen name="card_fade_edge">75dp</dimen>
     <dimen name="vert_fade_edge">50dp</dimen>
     <dimen name="horiz_fade_edge">50dp</dimen>
+    <dimen name="qs_tile_max_size">120dp</dimen>
+    <dimen name="qs_tile_max_padding">10dp</dimen>
+    <dimen name="qs_tile_dragged_z">10dp</dimen>
 </resources>

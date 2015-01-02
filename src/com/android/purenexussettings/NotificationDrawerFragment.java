@@ -26,6 +26,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.purenexussettings.R;
+import com.android.purenexussettings.qs.QSTiles;
 
 public class NotificationDrawerFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -33,7 +34,9 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
     public NotificationDrawerFragment(){}
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String QS_ORDER = "qs_order";
 
+    private Preference mQSTiles;
     private ListPreference mQuickPulldown;
 
     @Override
@@ -48,6 +51,8 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
         super.onActivityCreated(savedInstanceState);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        mQSTiles = prefSet.findPreference(QS_ORDER);
+
         ContentResolver resolver = getActivity().getContentResolver();
         mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
 
@@ -61,6 +66,10 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+
+        int qsTileCount = QSTiles.determineTileCount(getActivity());
+        mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
+                    qsTileCount, qsTileCount));
     }
 
     @Override
@@ -88,5 +97,15 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
                     : R.string.quick_pulldown_summary_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference pref) {
+        if (pref == mQSTiles) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.qs_order_title));
+
+            return true;
+        }
+        return false;
     }
 }
