@@ -258,6 +258,20 @@
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
 
+    <!-- Lockscreen weather fragment -->
+    <string name="lockscreen_weather_fragment_title">Lockscreen weather</string>
+    <string name="lockscreen_weather_summary">Customize lockscreen weather elements</string>
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather information</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_show_timestamp_title">Show timestamp</string>
+    <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
+    <string name="weather_condition_icon_title">Weather condition icon</string>
+    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
+    <string name="weather_condition_icon_colored_title">Colored</string>
+    <string name="weather_condition_icon_vclouds_title">VClouds</string>
+
   <!-- Navdrawer categories -->
     <string name="interface_cat_title">Interface</string>
     <string name="button_cat_title">Buttons</string>

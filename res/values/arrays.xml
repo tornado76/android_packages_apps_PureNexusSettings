@@ -25,7 +25,7 @@
     </string-array>
 
     <integer-array name="nav_drawer_cat_nums" translatable="false">
-        <item>13</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
+        <item>14</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
         <item>4</item>
         <item>3</item>
         <item>2</item>
@@ -47,6 +47,7 @@
         <item>@string/carrierlabelfrag_title</item>
         <item>@string/qs_order_title</item>
         <item>@string/volume_steps_fragment_title</item>
+        <item>@string/lockscreen_weather_fragment_title</item>
         <item>@string/lockscreen_frag_title</item>
         <item>@string/notifdraw_frag_title</item>
         <item>@string/recents_frag_title</item>
@@ -76,6 +77,7 @@
         <item>CarrierLabelFragment</item>
         <item>qs.QSTiles</item>
         <item>VolumeStepsFragment</item>
+        <item>LockscreenWeatherFragment</item>
         <item>LockscreenFragment</item>
         <item>NotificationDrawerFragment</item>
         <item>RecentsFragment</item>
@@ -93,6 +95,7 @@
     <!-- Keep them in order as the titles are in -->
     <!-- Also note that icons for items not in navdrawer won't be shown -->
     <array name="nav_drawer_icons" translatable="false">
+        <item>null</item>
         <item>null</item>
         <item>null</item>
         <item>null</item>
@@ -517,5 +520,18 @@
         <item>15</item>
         <item>7</item>
         <item>5</item>
+    </string-array>
+
+    <!-- Lockscreen Weather -->
+    <string-array name="weather_condition_icon_entries" translatable="false">
+        <item>@string/weather_condition_icon_monochrome_title</item>
+        <item>@string/weather_condition_icon_colored_title</item>
+        <item>@string/weather_condition_icon_vclouds_title</item>
+    </string-array>
+
+    <string-array name="weather_condition_icon_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>

@@ -28,6 +28,11 @@
                 android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
         </PreferenceScreen>
 
+        <Preference
+            android:key="ls_weather"
+            android:title="@string/lockscreen_weather_fragment_title"
+            android:summary="@string/lockscreen_weather_summary" />
+
         <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_anywhere"
             android:title="@string/double_tap_sleep_anywhere_title"

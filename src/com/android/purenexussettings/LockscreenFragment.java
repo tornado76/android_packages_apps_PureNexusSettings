@@ -38,9 +38,11 @@ public class LockscreenFragment extends PreferenceFragment {
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
     private static final String WALLPAPER_PACKAGE_NAME = "com.slim.wallpaperpicker";
     private static final String WALLPAPER_CLASS_NAME = "com.slim.wallpaperpicker.WallpaperCropActivity";
+    private static final String LSWEATHER = "ls_weather";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
+    private Preference mLsWeather;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class LockscreenFragment extends PreferenceFragment {
 
         mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+        mLsWeather = (Preference)findPreference(LSWEATHER);
 
         PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
 
@@ -73,6 +76,10 @@ public class LockscreenFragment extends PreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mLsWeather) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.lockscreen_weather_fragment_title));
+            return true;
+        }
         if (preference == mSetWallpaper) {
             setKeyguardWallpaper();
             return true;
