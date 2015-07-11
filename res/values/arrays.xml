@@ -25,7 +25,7 @@
     </string-array>
 
     <integer-array name="nav_drawer_cat_nums" translatable="false">
-        <item>12</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
+        <item>13</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
         <item>4</item>
         <item>3</item>
         <item>2</item>
@@ -46,6 +46,7 @@
         <item>@string/navbarbuttonfrag_title</item>
         <item>@string/carrierlabelfrag_title</item>
         <item>@string/qs_order_title</item>
+        <item>@string/volume_steps_fragment_title</item>
         <item>@string/lockscreen_frag_title</item>
         <item>@string/notifdraw_frag_title</item>
         <item>@string/recents_frag_title</item>
@@ -74,6 +75,7 @@
         <item>NavbarButtonFragment</item>
         <item>CarrierLabelFragment</item>
         <item>qs.QSTiles</item>
+        <item>VolumeStepsFragment</item>
         <item>LockscreenFragment</item>
         <item>NotificationDrawerFragment</item>
         <item>RecentsFragment</item>
@@ -91,6 +93,7 @@
     <!-- Keep them in order as the titles are in -->
     <!-- Also note that icons for items not in navdrawer won't be shown -->
     <array name="nav_drawer_icons" translatable="false">
+        <item>null</item>
         <item>null</item>
         <item>null</item>
         <item>null</item>
@@ -504,5 +507,15 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+    </string-array>
+
+    <!-- Volume step options. -->
+    <string-array name="volume_steps_entries" translatable="false">
+        <item>60</item>
+        <item>45</item>
+        <item>30</item>
+        <item>15</item>
+        <item>7</item>
+        <item>5</item>
     </string-array>
 </resources>

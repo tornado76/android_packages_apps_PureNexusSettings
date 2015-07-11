@@ -38,9 +38,11 @@ public class VolumeRockerFragment extends PreferenceFragment implements
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
+    private static final String VOLSTEPS = "vol_steps";
 
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mVolumeControlRingStream;
+    private Preference mVolSteps;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,8 @@ public class VolumeRockerFragment extends PreferenceFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mVolSteps = (Preference)findPreference(VOLSTEPS);
 
         int cursorControlAction = Settings.System.getInt(resolver,
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
@@ -102,7 +106,12 @@ public class VolumeRockerFragment extends PreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, value);
             return true;
-    }
+        }
+        if (preference == mVolSteps) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.volume_steps_fragment_title));
+
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

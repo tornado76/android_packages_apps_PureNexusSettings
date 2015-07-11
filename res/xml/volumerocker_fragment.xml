@@ -55,6 +55,11 @@
         android:defaultValue="false"
         android:dependency="volume_down_zen" />
 
+    <Preference
+        android:key="vol_steps"
+        android:title="@string/volume_steps_fragment_title"
+        android:summary="@string/volume_steps_summary" />
+
     <ListPreference
         android:key="volume_key_cursor_control"
         android:dialogTitle="@string/volbtn_cursor_control_title"
