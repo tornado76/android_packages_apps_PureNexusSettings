@@ -430,6 +430,8 @@
     <string name="dbl_tap_vib_summary">Vibrate on double tap of power button when enabled</string>
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+    <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
+    <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
     <string name="less_notification_sounds_title">Less frequent notification sounds</string>
     <string name="less_notification_sounds_summary">Limit the notification sounds of each app to only play once per set time period</string>
     <string name="less_notification_sounds_default">Default</string>
