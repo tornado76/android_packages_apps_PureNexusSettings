@@ -27,6 +27,12 @@
             android:summary="@string/kill_app_longpress_back_summary"
             android:defaultValue="false" />
 
+        <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+            android:key="recents_longpress"
+            android:title="@string/recents_longpress_title"
+            android:summary="@string/recents_longpress_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
