@@ -27,7 +27,7 @@
     <integer-array name="nav_drawer_cat_nums" translatable="false">
         <item>5</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
         <item>1</item>
-        <item>1</item>
+        <item>2</item>
         <item>1</item>
         <item>1</item>
     </integer-array>
@@ -41,6 +41,7 @@
         <item>Fi Switch</item>
         <item>Lock screen</item>
         <item>Navigation bar</item>
+        <item>PowerMenu</item>
         <item>Display</item>
         <item>Tools and info</item>
     </string-array>
@@ -55,6 +56,7 @@
         <item>FiSwitchFragment</item>
         <item>LockscreenFragment</item>
         <item>NavbarFragment</item>
+        <item>PowerMenuFragment</item>
         <item>DisplayFragment</item>
         <item>DeviceFragment</item>
     </string-array>
@@ -63,6 +65,7 @@
     <!-- Keep them in order as the titles are in -->
     <!-- Also note that icons for items not in navdrawer won't be shown -->
     <array name="nav_drawer_icons" translatable="false">
+        <item>null</item>
         <item>null</item>
         <item>null</item>
         <item>null</item>
@@ -130,5 +133,19 @@
     <string-array name="apppicker_2_keys_extras" translatable="false">
         <item>donothingintent</item>
         <item>null</item>
+    </string-array>
+
+    <!-- PowerMenu entries -->
+    <string-array name="power_menu_actions_array" translatable="false">
+        <item>power</item>
+        <item>reboot</item>
+        <item>screenshot</item>
+        <item>airplane</item>
+        <item>users</item>
+        <item>settings</item>
+        <item>lockdown</item>
+        <item>assist</item>
+        <item>voiceassist</item>
+        <item>silent</item>
     </string-array>
 </resources>
