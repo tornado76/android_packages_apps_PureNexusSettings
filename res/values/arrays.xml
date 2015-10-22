@@ -44,8 +44,8 @@
         <item>Navigation bar</item>
         <item>PowerMenu</item>
         <item>Display</item>
-        <item>Tools and info</item>
         <item>cLock</item>
+        <item>Tools and info</item>
     </string-array>
 
     <!-- Nav Drawer Fragment names-->
@@ -61,8 +61,8 @@
         <item>NavbarFragment</item>
         <item>PowerMenuFragment</item>
         <item>DisplayFragment</item>
-        <item>DeviceFragment</item>
         <item>nullcLock</item>
+        <item>DeviceFragment</item>
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
