@@ -26,10 +26,10 @@
 
     <integer-array name="nav_drawer_cat_nums" translatable="false">
         <item>5</item> <!-- this first part indicates the number of navdrawer frags NOT to be listed -->
-        <item>1</item>
+        <item>2</item>
         <item>2</item>
         <item>1</item>
-        <item>1</item>
+        <item>2</item>
     </integer-array>
 
     <!-- Nav Drawer Menu Items -->
@@ -40,10 +40,12 @@
         <item>App picker</item>
         <item>Fi Switch</item>
         <item>Lock screen</item>
+        <item>Notification panel</item>
         <item>Navigation bar</item>
         <item>PowerMenu</item>
         <item>Display</item>
         <item>Tools and info</item>
+        <item>cLock</item>
     </string-array>
 
     <!-- Nav Drawer Fragment names-->
@@ -54,17 +56,21 @@
         <item>EditPropFragment</item>
         <item>AppPickerFragment</item>
         <item>FiSwitchFragment</item>
+        <item>NotificationPanelFragment</item>
         <item>LockscreenFragment</item>
         <item>NavbarFragment</item>
         <item>PowerMenuFragment</item>
         <item>DisplayFragment</item>
         <item>DeviceFragment</item>
+        <item>nullcLock</item>
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <!-- Also note that icons for items not in navdrawer won't be shown -->
     <array name="nav_drawer_icons" translatable="false">
+        <item>null</item>
+        <item>null</item>
         <item>null</item>
         <item>null</item>
         <item>null</item>
