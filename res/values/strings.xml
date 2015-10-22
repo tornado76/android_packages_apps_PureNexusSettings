@@ -145,6 +145,10 @@
     <string name="recents_longpress_title">Recents longpress</string>
     <string name="recents_longpress_summary">Longpress recents to go to last open app</string>
 
+    <!-- Notification drawer fragment -->
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Show weather in the notification panel header</string>
+
   <!-- powermenu fragment -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>

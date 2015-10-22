@@ -22,15 +22,15 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
 
-public class NotificationPanelFragment extends PreferenceFragment {
-    public NotificationPanelFragment(){}
+public class NotificationDrawerFragment extends PreferenceFragment {
+    public NotificationDrawerFragment(){}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.notificationpanel_fragment);
+        addPreferencesFromResource(R.xml.notificationdrawer_fragment);
     }
 
     @Override
