@@ -152,6 +152,8 @@
     <!-- Notification drawer fragment -->
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show weather in the notification panel header</string>
+    <string name="notification_force_expand_title">Force expanded notifications</string>
+    <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
 
   <!-- powermenu fragment -->
     <string name="power_menu_reboot_title">Reboot menu</string>
