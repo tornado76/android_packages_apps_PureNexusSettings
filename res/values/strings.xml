@@ -140,6 +140,10 @@
     <string name="dial6">Info</string>
     <string name="dial6_sum">Current network info</string>
 
+  <!-- Lockscreen Fragment -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+
   <!-- Navbar fragment -->
     <string name="navigation_bar_opt_cat">Navigation bar options</string>
     <!-- Kill app long-press back -->
