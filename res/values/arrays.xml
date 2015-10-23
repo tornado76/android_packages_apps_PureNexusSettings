@@ -56,8 +56,8 @@
         <item>EditPropFragment</item>
         <item>AppPickerFragment</item>
         <item>FiSwitchFragment</item>
-        <item>NotificationDrawerFragment</item>
         <item>LockscreenFragment</item>
+        <item>NotificationDrawerFragment</item>
         <item>NavbarFragment</item>
         <item>PowerMenuFragment</item>
         <item>DisplayFragment</item>
