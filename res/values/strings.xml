@@ -122,6 +122,10 @@
     <string name="fiswitchtitle">Project Fi Tools</string>
     <string name="fiswitchsummary">Click for useful dial codes</string>
 
+  <!-- Display fragment -->
+    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+
   <!-- FiSwitch Frag strings -->
     <string name="dial1">Sprint</string>
     <string name="dial1_sum">Force jump to Sprint</string>
