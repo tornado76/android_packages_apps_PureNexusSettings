@@ -157,11 +157,17 @@
     <string name="recents_longpress_title">Recents longpress</string>
     <string name="recents_longpress_summary">Longpress recents to go to last open app</string>
 
-    <!-- Notification drawer fragment -->
+  <!-- Notification drawer fragment -->
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show weather in the notification panel header</string>
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
+
+  <!-- Notification fragment -->
+    <string name="battery_saver_notif_title">Battery saver notification</string>
+    <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
+    <string name="battery_low_notif_title">Low battery notification</string>
+    <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
 
   <!-- powermenu fragment -->
     <string name="power_category">Power menu options</string>
