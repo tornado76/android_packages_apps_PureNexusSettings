@@ -193,6 +193,8 @@
   <!-- volumerocker fragment -->
     <string name="volbtn_wake_device_title">Volume button wake</string>
     <string name="volbtn_wake_device_summary">Pressing either volume button will wake your device</string>
+    <string name="volbtn_music_controls_title">Music control</string>
+    <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
 
   <!-- widget strings -->
     <string name="widget_title_info">Pick a target</string>

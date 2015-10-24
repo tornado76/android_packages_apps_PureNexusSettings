@@ -23,4 +23,10 @@
         android:summary="@string/button_wake_summary"
         android:defaultValue="false" />
 
+    <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+        android:key="volbtn_music_controls"
+        android:title="@string/volbtn_music_controls_title"
+        android:summary="@string/volbtn_music_controls_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
