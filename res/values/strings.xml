@@ -145,6 +145,8 @@
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
     <string name="lockscreen_voice_title">Voice shortcut</string>
     <string name="lockscreen_voice_summary">Enables voice shortcut instead of phone</string>
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
   <!-- Navbar fragment -->
     <string name="navigation_bar_opt_cat">Navigation bar options</string>
