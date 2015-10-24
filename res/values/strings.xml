@@ -143,6 +143,8 @@
   <!-- Lockscreen Fragment -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+    <string name="lockscreen_voice_title">Voice shortcut</string>
+    <string name="lockscreen_voice_summary">Enables voice shortcut instead of phone</string>
 
   <!-- Navbar fragment -->
     <string name="navigation_bar_opt_cat">Navigation bar options</string>
