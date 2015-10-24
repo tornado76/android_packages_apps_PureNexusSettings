@@ -17,4 +17,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:pure="http://schemas.android.com/apk/res-auto" >
 
+    <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+        android:key="volume_wake_screen"
+        android:title="@string/volbtn_wake_device_title"
+        android:summary="@string/button_wake_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

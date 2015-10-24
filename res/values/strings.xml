@@ -190,6 +190,10 @@
     <string name="editprop_restore">Restore</string>
     <string name="action_fabhide">Show FAB</string>
 
+  <!-- volumerocker fragment -->
+    <string name="volbtn_wake_device_title">Volume button wake</string>
+    <string name="volbtn_wake_device_summary">Pressing either volume button will wake your device</string>
+
   <!-- widget strings -->
     <string name="widget_title_info">Pick a target</string>
 </resources>
