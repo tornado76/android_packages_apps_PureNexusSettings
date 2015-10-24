@@ -164,6 +164,8 @@
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
 
   <!-- powermenu fragment -->
+    <string name="power_category">Power menu options</string>
+    <string name="actions_category">Power menu items</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
@@ -175,6 +177,7 @@
     <string name="power_menu_bug_report_title">Bug report</string>
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+    <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
 
   <!-- toolbar menu strings -->
     <string name="action_settings">Settings</string>

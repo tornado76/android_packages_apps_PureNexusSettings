@@ -24,11 +24,13 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import com.android.purenexussettings.preferences.SystemSettingSwitchPreference;
 
 import com.android.internal.util.cm.PowerMenuConstants;
 import static com.android.internal.util.cm.PowerMenuConstants.*;
@@ -39,6 +41,9 @@ import java.util.List;
 
 public class PowerMenuFragment extends PreferenceFragment {
 
+    private static final String ACTION_CATEGORY = "action_category";
+    private static final String POWER_CATEGORY = "power_category";
+	// power items
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
     private SwitchPreference mAirplanePref;
@@ -61,7 +66,14 @@ public class PowerMenuFragment extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.powermenu_fragment);
         mContext = getActivity().getApplicationContext();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
+        final PreferenceCategory powerCategory =
+                (PreferenceCategory) prefScreen.findPreference(POWER_CATEGORY);
+
+		// power items
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
         mAllActions = PowerMenuConstants.getAllActions();
@@ -69,7 +81,7 @@ public class PowerMenuFragment extends PreferenceFragment {
         for (String action : mAllActions) {
             // Remove preferences not present in the overlay
             if (!isActionAllowed(action)) {
-                getPreferenceScreen().removePreference(findPreference(action));
+                actionCategory.removePreference(findPreference(action));
                 continue;
             }
 
@@ -105,6 +117,10 @@ public class PowerMenuFragment extends PreferenceFragment {
     public void onStart() {
         super.onStart();
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
+
         if (mRebootPref != null) {
             mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
         }
@@ -120,7 +136,7 @@ public class PowerMenuFragment extends PreferenceFragment {
 
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-                getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                actionCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
                 mUsersPref = null;
             } else {
                 List<UserInfo> users = ((UserManager) mContext.getSystemService(
