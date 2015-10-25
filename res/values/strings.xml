@@ -226,6 +226,10 @@
     <string name="statusbar_frag_title">Statusbar</string>
     <string name="battery_frag_title">Battery settings</string>
     <string name="battery_frag_summary">Change battery icon, percentage, color</string>
+    <string name="status_bar_battery_percentage_title">Show battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
   <!-- toolbar menu strings -->
     <string name="action_settings">Settings</string>
