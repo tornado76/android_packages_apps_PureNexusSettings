@@ -21,21 +21,15 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
-
-import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.Handler;
 import android.preference.PreferenceScreen;
-import android.provider.Settings.SettingNotFoundException;
+import android.provider.Settings;
 
 public class BatteryFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
     public BatteryFragment(){}
 
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
     private static final String STATUS_BAR_BATTERY_STYLE_HIDDEN = "4";
     private static final String STATUS_BAR_BATTERY_STYLE_TEXT = "6";
@@ -54,12 +48,14 @@ public class BatteryFragment extends PreferenceFragment
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
 
-        int batteryStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+        int batteryStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
         mStatusBarBattery.setValue(String.valueOf(batteryStyle));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
 
-        int batteryShowPercent = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+        int batteryShowPercent = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
         mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
@@ -82,7 +78,8 @@ public class BatteryFragment extends PreferenceFragment
             int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
             Settings.System.putInt(
                     resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryShowPercent);
-            mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntries()[index]);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
             return true;
         }
         return false;
