@@ -19,6 +19,7 @@
     <string name="app_name">PureNexus</string>
 
   <!-- About Frag strings -->
+    <string name="about_frag_title">About</string>
     <string name="pushbullet_data">https://www.pushbullet.com/channel?tag=purenexus</string>
     <string name="gplus_data">https://plus.google.com/communities/103055954354785266764</string>
     <string name="twit_data">https://twitter.com/BeansTown106</string>
@@ -51,6 +52,10 @@
     <string name="tab_indicator_alpha">0x26</string>
 
   <!-- App picker intent stuff -->
+    <string name="apppicker_frag_title">App picker</string>
+    <string name="apppick_custom">Custom</string>
+    <string name="apppick_apps">Applications</string>
+    <string name="apppick_shortcuts">Shortcuts</string>
     <string name="screen_off">Screen off</string>
     <string name="powermenu">Power menu</string>
     <string name="donothing">Do nothing</string>
@@ -85,6 +90,8 @@
 &#8226; Those not mentioned but should have been<br />]]></string>
 
   <!-- BuildProp editor -->
+    <string name="buildprop_frag_title">Build prop</string>
+    <string name="buildprop_frag_title2">Edit build prop</string>
     <string name="editprop_key">Property Key</string>
     <string name="editprop_name">Property Name</string>
     <string name="editprop_title">Edit/Add Property</string>
@@ -92,6 +99,9 @@
     <string name="editprop_unsaved_changes_message">Would you like to set this property?</string>
     <string name="editprop_delete_item_title">Delete Item</string>
     <string name="editprop_delete_item_message">Would you like to delete this property?</string>
+
+  <!-- cLock -->
+    <string name="clock_frag_title">cLock</string>
 
   <!-- Color picker strings -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -109,6 +119,7 @@
     <string name="desc_list_item_icon">Item Icon</string>
 
   <!-- Device Frag strings -->
+    <string name="toolinfo_frag_title">Tools and info</string>
     <string name="device_info_title">Phone info</string>
     <string name="device_summ">Get general info about your device</string>
     <string name="title_battery_history">Battery history</string>
@@ -123,10 +134,12 @@
     <string name="fiswitchsummary">Click for useful dial codes</string>
 
   <!-- Display fragment -->
+    <string name="display_frag_title">Display</string>
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
 
   <!-- FiSwitch Frag strings -->
+    <string name="fiswitch_frag_title">Fi Switch</string>
     <string name="dial1">Sprint</string>
     <string name="dial1_sum">Force jump to Sprint</string>
     <string name="dial2">T-Mobile</string>
@@ -141,6 +154,7 @@
     <string name="dial6_sum">Current network info</string>
 
   <!-- Lockscreen Fragment -->
+    <string name="lockscreen_frag_title">Lock screen</string>
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
     <string name="lockscreen_voice_title">Voice shortcut</string>
@@ -148,7 +162,14 @@
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
+  <!-- Navdrawer categories -->
+    <string name="interface_cat_title">Interface</string>
+    <string name="button_cat_title">Buttons</string>
+    <string name="system_cat_title">System</string>
+    <string name="util_cat_title">Utilities</string>
+
   <!-- Navbar fragment -->
+    <string name="navbar_frag_title">Navigation bar</string>
     <string name="navigation_bar_opt_cat">Navigation bar options</string>
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -158,18 +179,21 @@
     <string name="recents_longpress_summary">Longpress recents to go to last open app</string>
 
   <!-- Notification drawer fragment -->
+    <string name="notifdraw_frag_title">Notification drawer</string>
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show weather in the notification panel header</string>
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
 
   <!-- Notification fragment -->
+    <string name="notif_frag_title">Notifications</string>
     <string name="battery_saver_notif_title">Battery saver notification</string>
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
     <string name="battery_low_notif_title">Low battery notification</string>
     <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
 
   <!-- powermenu fragment -->
+    <string name="powermenu_frag_title">PowerMenu</string>
     <string name="power_category">Power menu options</string>
     <string name="actions_category">Power menu items</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
@@ -184,6 +208,11 @@
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
+
+  <!-- statusbar fragment -->
+    <string name="statusbar_frag_title">Statusbar</string>
+    <string name="battery_frag_title">Battery settings</string>
+    <string name="battery_frag_summary">Change battery icon, percentage, color</string>
 
   <!-- toolbar menu strings -->
     <string name="action_settings">Settings</string>
@@ -200,6 +229,7 @@
     <string name="action_fabhide">Show FAB</string>
 
   <!-- volumerocker fragment -->
+    <string name="volrock_frag_title">Volume rocker</string>
     <string name="volbtn_wake_device_title">Volume button wake</string>
     <string name="button_wake_summary">Overrides music control</string>
     <string name="volbtn_music_controls_title">Music control</string>

@@ -344,8 +344,8 @@ public class TinkerActivity extends AppCompatActivity {
 
     private boolean checkPosition(int position) {
         // list out positions that should skip stack clearing
-        // buildprop editprop apppicker fiswitch
-        return position == 1 || position == 2 || position == 3 || position == 4;
+        // buildprop editprop apppicker fiswitch batteryfrag
+        return position == 1 || position == 2 || position == 3 || position == 4 || position == 5;
     }
 
     private boolean checkEditProp(int position) {
@@ -436,6 +436,19 @@ public class TinkerActivity extends AppCompatActivity {
             @Override
             public void run() {
                 displayView(3);
+            }
+        }, 400);
+    }
+
+    public void displayBattery() {
+        myHandler.removeCallbacksAndMessages(null);
+        mMenu = true;
+        removeCurrent();
+        // below replicates the visual delay seen when launching frags from navdrawer
+        myHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                displayView(5);
             }
         }, 400);
     }
