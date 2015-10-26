@@ -210,6 +210,11 @@
 
   <!-- Lockscreen Fragment -->
     <string name="lockscreen_frag_title">Lock screen</string>
+    <string name="lockscreen_gen_title">General options</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Reset lock screen wallpaper</string>
+    <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper reset</string>
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
     <string name="lockscreen_voice_title">Voice shortcut</string>

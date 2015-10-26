@@ -16,25 +16,74 @@
 
 package com.android.purenexussettings;
 
+import android.app.Activity;
+import android.app.WallpaperManager;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 public class LockscreenFragment extends PreferenceFragment {
     public LockscreenFragment(){}
 
+    public static final int IMAGE_PICK = 1;
+
+    private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
+    private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+
+    private Preference mSetWallpaper;
+    private Preference mClearWallpaper;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.lockscreen_fragment);
+
+        mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
+        mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, @NonNull Preference pref) {
-        return false;
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mSetWallpaper) {
+            setKeyguardWallpaper();
+            return true;
+        } else if (preference == mClearWallpaper) {
+            clearKeyguardWallpaper();
+            Toast.makeText(getView().getContext(), getString(R.string.reset_lockscreen_wallpaper),
+            Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == IMAGE_PICK && resultCode == Activity.RESULT_OK) {
+            if (data != null && data.getData() != null) {
+                Uri uri = data.getData();
+                Intent intent = new Intent();
+                intent.setClassName("com.slim.wallpaperpicker", "com.slim.wallpaperpicker.WallpaperCropActivity");
+                intent.putExtra("keyguardMode", "1");
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        }
+    }
+
+    private void setKeyguardWallpaper() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, IMAGE_PICK);
+    }
+
+    private void clearKeyguardWallpaper() {
+        WallpaperManager wallpaperManager = null;
+        wallpaperManager = WallpaperManager.getInstance(getActivity());
+        wallpaperManager.clearKeyguardWallpaper();
     }
 }
