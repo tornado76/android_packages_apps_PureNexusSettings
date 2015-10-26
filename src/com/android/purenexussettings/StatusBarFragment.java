@@ -24,9 +24,11 @@ import android.support.annotation.NonNull;
 
 public class StatusBarFragment extends PreferenceFragment {
     private static final String BATTERYFRAG = "batteryfrag";
+    private static final String CLOCKDATEFRAG = "clockdatefrag";
 
     private Preference mBattery;
-
+    private Preference mClockDate;
+	
     public StatusBarFragment(){}
 
     @Override
@@ -37,6 +39,7 @@ public class StatusBarFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.statusbar_fragment);
 
         mBattery = (Preference)findPreference(BATTERYFRAG);
+        mClockDate = (Preference)findPreference(CLOCKDATEFRAG);
 
     }
 
@@ -44,6 +47,12 @@ public class StatusBarFragment extends PreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, @NonNull Preference pref) {
         if (pref == mBattery) {
             ((TinkerActivity)getActivity()).displayBattery();
+
+            return true;
+        }
+
+        if (pref == mClockDate) {
+            ((TinkerActivity)getActivity()).displayClockDate();
 
             return true;
         }

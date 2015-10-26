@@ -22,4 +22,9 @@
         android:title="@string/battery_frag_title"
         android:summary="@string/battery_frag_summary" />
 
+    <Preference
+        android:key="clockdatefrag" 
+        android:title="@string/clock_frag_title"
+        android:summary="@string/clock_frag_summary" />
+
 </PreferenceScreen>
