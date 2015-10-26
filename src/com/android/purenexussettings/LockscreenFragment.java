@@ -19,12 +19,15 @@ package com.android.purenexussettings;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.widget.Toast;
+import android.support.design.widget.Snackbar;
 
 public class LockscreenFragment extends PreferenceFragment {
     public LockscreenFragment(){}
@@ -33,6 +36,8 @@ public class LockscreenFragment extends PreferenceFragment {
 
     private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+    private static final String WALLPAPER_PACKAGE_NAME = "com.slim.wallpaperpicker";
+    private static final String WALLPAPER_CLASS_NAME = "com.slim.wallpaperpicker.WallpaperCropActivity";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
@@ -40,10 +45,30 @@ public class LockscreenFragment extends PreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        boolean slimWallInstalled;
+
         addPreferencesFromResource(R.xml.lockscreen_fragment);
 
         mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+
+        PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
+
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // check if wallpaper app installed
+        try {
+            PackageInfo pi = getActivity().getPackageManager().getPackageInfo(WALLPAPER_PACKAGE_NAME, 0);
+            slimWallInstalled = pi.applicationInfo.enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            slimWallInstalled = false;
+        }
+
+        // if not remove wallpaper options
+        if (!slimWallInstalled) {
+            prefScreen.removePreference(mPrefCat);
+        }
+
     }
 
     @Override
@@ -53,8 +78,8 @@ public class LockscreenFragment extends PreferenceFragment {
             return true;
         } else if (preference == mClearWallpaper) {
             clearKeyguardWallpaper();
-            Toast.makeText(getView().getContext(), getString(R.string.reset_lockscreen_wallpaper),
-            Toast.LENGTH_LONG).show();
+            Snackbar.make(getActivity().findViewById(R.id.frame_container), getString(R.string.reset_lockscreen_wallpaper),
+            Snackbar.LENGTH_LONG).show();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -66,7 +91,7 @@ public class LockscreenFragment extends PreferenceFragment {
             if (data != null && data.getData() != null) {
                 Uri uri = data.getData();
                 Intent intent = new Intent();
-                intent.setClassName("com.slim.wallpaperpicker", "com.slim.wallpaperpicker.WallpaperCropActivity");
+                intent.setClassName(WALLPAPER_PACKAGE_NAME, WALLPAPER_CLASS_NAME);
                 intent.putExtra("keyguardMode", "1");
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 intent.setData(uri);

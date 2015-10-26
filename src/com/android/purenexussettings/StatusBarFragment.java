@@ -46,13 +46,13 @@ public class StatusBarFragment extends PreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, @NonNull Preference pref) {
         if (pref == mBattery) {
-            ((TinkerActivity)getActivity()).displayBattery();
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.battery_frag_title));
 
             return true;
         }
 
         if (pref == mClockDate) {
-            ((TinkerActivity)getActivity()).displayClockDate();
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.clockdate_frag_title));
 
             return true;
         }
