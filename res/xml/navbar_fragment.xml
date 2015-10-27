@@ -21,6 +21,11 @@
         android:key="navigation_bar"
         android:title="@string/navigation_bar_opt_cat" >
 
+        <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+            android:key="navigation_bar_show"
+            android:title="@string/navbar_enable_bar"
+            android:defaultValue="true" />
+
         <com.android.purenexussettings.preferences.SecureSettingSwitchPreference
             android:key="kill_app_longpress_back"
             android:title="@string/kill_app_longpress_back"
@@ -32,6 +37,17 @@
             android:title="@string/recents_longpress_title"
             android:summary="@string/recents_longpress_summary"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navigation_barc"
+        android:title="@string/navigation_bar_cus" >
+
+        <Preference
+            android:key="navbar_dimen_frag"
+            android:title="@string/navbardimenfrag_title"
+            android:dependency="navigation_bar_show" />
 
     </PreferenceCategory>
 

@@ -23,6 +23,10 @@ import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
 
 public class NavbarFragment extends PreferenceFragment {
+    private static final String NAVDIMEN = "navbar_dimen_frag";
+
+    private Preference mNavDimen;
+	
     public NavbarFragment(){}
 
     @Override
@@ -31,10 +35,19 @@ public class NavbarFragment extends PreferenceFragment {
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.navbar_fragment);
+
+        mNavDimen = (Preference)findPreference(NAVDIMEN);
+
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, @NonNull Preference pref) {
+        if (pref == mNavDimen) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.navbardimenfrag_title));
+
+            return true;
+        }
+
         return false;
     }
 }
