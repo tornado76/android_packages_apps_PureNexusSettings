@@ -240,6 +240,8 @@
     <!-- Recent longpress last app toggle -->
     <string name="recents_longpress_title">Recents longpress</string>
     <string name="recents_longpress_summary">Longpress recents to go to last open app</string>
+    <string name="ime_switcher_notify">IME selector icon</string>
+    <string name="ime_switcher_notify_summary">Display input method selector icon</string>
     <string name="navbar_enable_bar">Enable</string>
     <string name="navbardimenfrag_title">Navbar Dimensions</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
