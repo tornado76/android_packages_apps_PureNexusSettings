@@ -27,4 +27,10 @@
         android:title="@string/clockdate_frag_title"
         android:summary="@string/clock_frag_summary" />
 
+    <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_to_sleep_title"
+        android:summary="@string/double_tap_to_sleep_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
