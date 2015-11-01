@@ -17,10 +17,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:pure="http://schemas.android.com/apk/res-auto" >
 
-    <com.android.purenexussettings.preferences.GlobalSettingSwitchPreference
-        android:key="wake_when_plugged_or_unplugged"
-        android:title="@string/wake_when_plugged_or_unplugged_title"
-        android:summary="@string/wake_when_plugged_or_unplugged_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:key="disp"
+        android:title="@string/display_category" >
+
+        <ListPreference
+            android:key="lcd_density"
+            android:title="@string/lcd_density"
+            android:persistent="false" />
+
+        <com.android.purenexussettings.preferences.GlobalSettingSwitchPreference
+            android:key="wake_when_plugged_or_unplugged"
+            android:title="@string/wake_when_plugged_or_unplugged_title"
+            android:summary="@string/wake_when_plugged_or_unplugged_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
