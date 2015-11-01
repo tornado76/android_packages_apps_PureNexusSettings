@@ -51,6 +51,10 @@ public class DisplayFragment extends PreferenceFragment implements
     public DisplayFragment(){}
 
     private static final String KEY_LCD_DENSITY = "lcd_density";
+    private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+
+    private static final String CATEGORY_LEDS = "leds";
 
     private ListPreference mLcdDensityPreference;
 
@@ -93,6 +97,9 @@ public class DisplayFragment extends PreferenceFragment implements
             mLcdDensityPreference.setOnPreferenceChangeListener(this);
             updateLcdDensityPreferenceDescription(currentDensity);
         }
+        final PreferenceCategory leds = (PreferenceCategory)
+                findPreference(CATEGORY_LEDS);
+		initPulse(leds);
     }
 
     private int getDefaultDensity() {
@@ -162,6 +169,18 @@ public class DisplayFragment extends PreferenceFragment implements
             }
         };
         task.execute();
+    }
+
+    private void initPulse(PreferenceCategory parent) {
+        if (!getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed)) {
+            parent.removePreference(parent.findPreference(KEY_NOTIFICATION_LIGHT));
+        }
+        if (!getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveBatteryLed)
+                || UserHandle.myUserId() != UserHandle.USER_OWNER) {
+            parent.removePreference(parent.findPreference(KEY_BATTERY_LIGHT));
+        }
     }
 
      @Override

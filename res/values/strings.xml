@@ -186,6 +186,9 @@
   <!-- Display fragment -->
     <string name="display_frag_title">Display</string>
     <string name="display_category">Display options</string>
+    <string name="led_category">Led controls</string>
+    <string name="battery_light_title">Battery light</string>
+    <string name="notification_light_title">Notification light</string>
     <string name="lcd_density">LCD density</string>
     <string name="dialog_title_lcd_density">LCD density</string>
     <string name="lcd_density_value_format">%d DPI</string>
