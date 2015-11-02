@@ -17,6 +17,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:pure="http://schemas.android.com/apk/res-auto" >
 
+    <com.android.purenexussettings.preferences.SecureSettingSwitchPreference
+        android:key="volume_keys_control_ring_stream"
+        android:title="@string/volume_keys_control_ring_stream_title"
+        android:summary="@string/volume_keys_control_ring_stream_summary" />
+
     <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
         android:key="volume_wake_screen"
         android:title="@string/volbtn_wake_device_title"

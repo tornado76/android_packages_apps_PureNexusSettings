@@ -24,27 +24,27 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 
-import android.support.annotation.NonNull;
+public class VolumeRockerFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
-public class VolumeRockerFragment extends PreferenceFragment implements OnPreferenceChangeListener {
-
-    public VolumeRockerFragment(){}
+	public VolumeRockerFragment(){}
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
 
     private ListPreference mVolumeKeyCursorControl;
+    private SwitchPreference mVolumeControlRingStream;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.volumerocker_fragment);
 
         final Resources res = getResources();
@@ -56,6 +56,13 @@ public class VolumeRockerFragment extends PreferenceFragment implements OnPrefer
         mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                 cursorControlAction);
 
+        mVolumeControlRingStream = (SwitchPreference)
+                findPreference(KEY_VOLUME_CONTROL_RING_STREAM);
+        int volumeControlRingtone = Settings.System.getInt(resolver,
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1);
+        if (mVolumeControlRingStream != null) {
+            mVolumeControlRingStream.setChecked(volumeControlRingtone > 0);
+        }
     }
 
     @Override
@@ -86,5 +93,16 @@ public class VolumeRockerFragment extends PreferenceFragment implements OnPrefer
             return true;
         }
         return false;
+    }
+	
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mVolumeControlRingStream) {
+            int value = mVolumeControlRingStream.isChecked() ? 1 : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, value);
+            return true;
+    }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
