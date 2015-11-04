@@ -38,8 +38,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.android.purenexussettings.preferences.ColorPickerPreference;
-
 import java.util.Date;
 import java.util.Locale;
 
@@ -51,7 +49,6 @@ public class ClockDateFragment extends PreferenceFragment
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "status_bar_am_pm";
-    private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String PREF_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
@@ -64,7 +61,6 @@ public class ClockDateFragment extends PreferenceFragment
 
     private ListPreference mClockStyle;
     private ListPreference mClockAmPmStyle;
-    private ColorPickerPreference mColorPicker;
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDatePosition;
@@ -118,13 +114,6 @@ public class ClockDateFragment extends PreferenceFragment
         }
         mClockAmPmStyle.setEnabled(!is24hour);
 
-        mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
-        mColorPicker.setOnPreferenceChangeListener(this);
-        mColorPicker.setSummary(mColorPicker.getSummaryText() + ColorPickerPreference.convertToARGB(Settings.System.getInt(getActivity().getContentResolver(),
-                     Settings.System.STATUSBAR_CLOCK_COLOR, mColorPicker.getPrefDefault())));
-        mColorPicker.setNewPreviewColor(Settings.System.getInt(getActivity().getContentResolver(),
-                     Settings.System.STATUSBAR_CLOCK_COLOR, mColorPicker.getPrefDefault()));
-
         mClockDateDisplay = (ListPreference) findPreference(PREF_CLOCK_DATE_DISPLAY);
         mClockDateDisplay.setOnPreferenceChangeListener(this);
         mClockDateDisplay.setValue(Integer.toString(Settings.System.getInt(getActivity()
@@ -158,7 +147,6 @@ public class ClockDateFragment extends PreferenceFragment
         mStatusBarClock.setChecked((Settings.System.getInt(
                 getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
-        mColorPicker.setPreviewDim(mStatusBarClock.isChecked());
         mStatusBarClock.setOnPreferenceChangeListener(this);
 
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
@@ -192,11 +180,6 @@ public class ClockDateFragment extends PreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
             mClockStyle.setSummary(mClockStyle.getEntries()[index]);
-            return true;
-        } else if (preference == mColorPicker) {
-			Settings.System.putInt(getActivity().getContentResolver(),
-					Settings.System.STATUSBAR_CLOCK_COLOR, (Integer) newValue);					
-			preference.setSummary(((ColorPickerPreference) preference).getSummaryText() + ColorPickerPreference.convertToARGB((Integer) newValue));
             return true;
         } else if (preference == mClockDateDisplay) {
             int val = Integer.parseInt((String) newValue);
@@ -234,7 +217,6 @@ public class ClockDateFragment extends PreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK,
                     (Boolean) newValue ? 1 : 0);
-			mColorPicker.setPreviewDim((Boolean) newValue);		
             return true;
         } else if (preference == mClockDateFormat) {
             int index = mClockDateFormat.findIndexOfValue((String) newValue);

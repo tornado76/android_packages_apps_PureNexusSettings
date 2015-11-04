@@ -31,12 +31,4 @@
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
 
-    <com.android.purenexussettings.preferences.ColorPickerPreference
-        android:key="battery_icon_color"
-        android:title="@string/battery_icon_title"
-        android:defaultValue="0xffffffff"
-        android:dialogTitle="@string/battery_icon_title"
-        pure:alphaSlider="true"
-        pure:alphaText="true" />
-
 </PreferenceScreen>

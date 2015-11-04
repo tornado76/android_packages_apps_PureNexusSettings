@@ -94,7 +94,7 @@
 
   <!-- Battery Fragment -->
     <string name="battery_frag_title">Battery settings</string>
-    <string name="battery_frag_summary">Change battery icon, percentage, color</string>
+    <string name="battery_frag_summary">Change battery icon style and percentage</string>
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
@@ -106,7 +106,6 @@
     <string name="status_bar_battery_percentage_default">Hidden</string>
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
-    <string name="battery_icon_title">Battery color</string>
 
   <!-- BuildProp editor -->
     <string name="buildprop_frag_title">Build prop</string>
@@ -131,7 +130,6 @@
     <string name="clockdate_frag_title">Clock and date</string>
     <string name="clock_frag_summary">Custom clock and date options</string>
     <string name="clock_title_enable">Alignment</string>
-    <string name="clock_color_title">Clock color</string>
     <string name="status_bar_show_clock_title">Show clock and date</string>
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
@@ -269,7 +267,7 @@
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
 
   <!-- Network traffic fragment -->
-    <string name="status_bar_traffic_summary">Network traffic options and color</string>
+    <string name="status_bar_traffic_summary">Network traffic options</string>
     <string name="nettraffic_frag_title">Network traffic</string>
     <string name="show_network_traffic_state">Status bar traffic monitor</string>
     <string name="show_network_traffic_unit">Display unit</string>
@@ -287,7 +285,6 @@
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
-    <string name="network_traffic_color_style">Network traffic color</string>
 
   <!-- Notification drawer fragment -->
     <string name="notifdraw_frag_title">Notification drawer</string>

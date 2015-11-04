@@ -22,15 +22,6 @@
        android:title="@string/status_bar_show_clock_title"
        android:defaultValue="true" />
 
-    <com.android.purenexussettings.preferences.ColorPickerPreference
-        android:key="clock_color"
-        android:title="@string/clock_color_title"
-        android:defaultValue="0xffffff"
-        android:dependency="status_bar_show_clock"
-        android:dialogTitle="@string/clock_color_title"
-        pure:alphaSlider="true"
-        pure:alphaText="true" />
-
     <ListPreference
         android:key="clock_style"
         android:entries="@array/clock_style_entries"
