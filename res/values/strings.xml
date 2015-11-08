@@ -220,6 +220,7 @@
   <!-- Lockscreen Fragment -->
     <string name="lockscreen_frag_title">Lock screen</string>
     <string name="lockscreen_gen_title">General options</string>
+    <string name="lockscreen_targets_message">Lock screen shortcuts</string>
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Reset lock screen wallpaper</string>
