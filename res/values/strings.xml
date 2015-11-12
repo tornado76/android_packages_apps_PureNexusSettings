@@ -129,6 +129,12 @@
   <!-- clock date fragment -->
     <string name="clockdate_frag_title">Clock and date</string>
     <string name="clock_frag_summary">Custom clock and date options</string>
+    <string name="status_bar_clock_style_title">Clock style</string>
+    <string name="status_bar_am_pm_title">AM/PM style</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <string name="status_bar_clock_style_right">Right</string>
+    <string name="status_bar_clock_style_left">Left</string>
+    <string name="status_bar_clock_style_center">Center</string>
     <string name="clock_date_display">Date</string>
     <string name="clock_date_style">Date style</string>
     <string name="clock_date_format">Date format</string>
