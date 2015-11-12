@@ -28,8 +28,10 @@ public class NavbarFragment extends PreferenceFragment {
     private static final String CATEGORY_NAVBAR = "navigation_bar";
 
     private static final String NAVDIMEN = "navbar_dimen_frag";
+    private static final String NAVBUTTON = "navbar_button_frag";
 
     private Preference mNavDimen;
+    private Preference mNavButton;
 	
     public NavbarFragment(){}
 
@@ -44,6 +46,7 @@ public class NavbarFragment extends PreferenceFragment {
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_NAVBAR);
 
         mNavDimen = (Preference)findPreference(NAVDIMEN);
+        mNavButton = (Preference)findPreference(NAVBUTTON);
 
         // Enable or disable NavbarImeSwitcher based on boolean: config_show_cmIMESwitcher
         boolean showCmImeSwitcher = getResources().getBoolean(
@@ -60,6 +63,11 @@ public class NavbarFragment extends PreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, Preference pref) {
         if (pref == mNavDimen) {
             ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.navbardimenfrag_title));
+
+            return true;
+        }
+        if (pref == mNavButton) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.navbarbuttonfrag_title));
 
             return true;
         }

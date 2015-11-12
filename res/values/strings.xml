@@ -217,6 +217,11 @@
     <string name="dial6">Info</string>
     <string name="dial6_sum">Current network info</string>
 
+  <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    
   <!-- Lockscreen Fragment -->
     <string name="lockscreen_frag_title">Lock screen</string>
     <string name="lockscreen_gen_title">General options</string>
@@ -270,6 +275,12 @@
     <string name="navigation_bar_size_40_dp">40 dp</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
+    <string name="navbarbuttonfrag_title">Buttons and layout</string>
+    <string name="navigation_bar_help_text">To get started tap the edit icon to unlock the navigation bar for editing.\n\nYou can tap an icon to change its shortcut, or long press an icon to re-arrange the layout.\n\nTap \'Save\' to commit your changes, or \'Restore defaults\' to reset the layout to default settings.</string>
+    <string name="navigation_restore_button_text">Restore\ndefaults</string>
+    <string name="navigation_edit_button_text">Edit</string>
+    <string name="navigation_save_button_text">Save</string>
+    <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
 
   <!-- Network traffic fragment -->
     <string name="status_bar_traffic_summary">Network traffic options</string>
