@@ -339,6 +339,9 @@
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
 
+  <!-- Recents fragment -->
+    <string name="recents_frag_title">Recent apps</string>
+
   <!-- statusbar fragment -->
     <string name="statusbar_frag_title">Statusbar</string>
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
