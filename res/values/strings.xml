@@ -303,6 +303,8 @@
 
   <!-- Notification drawer fragment -->
     <string name="notifdraw_frag_title">Notification drawer</string>
+    <string name="notification_panel_title">Notification panel</string>
+    <string name="qs_panel_title">Quick settings panel</string>
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
     <string name="quick_pulldown_summary_left">Left</string>
@@ -314,6 +316,7 @@
     <string name="status_bar_show_weather_summary">Show weather in the notification panel header</string>
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
+    <string name="qs_brightness_slider_title">Brightness slider</string>
 
   <!-- Notification fragment -->
     <string name="notif_frag_title">Notifications</string>
