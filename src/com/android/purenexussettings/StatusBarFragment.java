@@ -24,10 +24,12 @@ import android.support.annotation.NonNull;
 
 public class StatusBarFragment extends PreferenceFragment {
     private static final String BATTERYFRAG = "batteryfrag";
+    private static final String CARRIERLABELFRAG = "carrierlabelfrag";
     private static final String CLOCKDATEFRAG = "clockdatefrag";
     private static final String NETWORKTRAFFRAG = "nettraffrag";
 
     private Preference mBattery;
+    private Preference mCarrierLabel;
     private Preference mClockDate;
     private Preference mNetTraf;
 
@@ -41,6 +43,7 @@ public class StatusBarFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.statusbar_fragment);
 
         mBattery = (Preference)findPreference(BATTERYFRAG);
+        mCarrierLabel = (Preference)findPreference(CARRIERLABELFRAG);
         mClockDate = (Preference)findPreference(CLOCKDATEFRAG);
         mNetTraf = (Preference)findPreference(NETWORKTRAFFRAG);
     }
@@ -49,6 +52,12 @@ public class StatusBarFragment extends PreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, @NonNull Preference pref) {
         if (pref == mBattery) {
             ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.battery_frag_title));
+
+            return true;
+        }
+
+        if (pref == mCarrierLabel) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.carrierlabelfrag_title));
 
             return true;
         }

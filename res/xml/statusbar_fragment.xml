@@ -23,6 +23,11 @@
         android:summary="@string/battery_frag_summary" />
 
     <Preference
+        android:key="carrierlabelfrag" 
+        android:title="@string/carrierlabelfrag_title"
+        android:summary="@string/carrier_options_summary" />
+
+    <Preference
         android:key="clockdatefrag" 
         android:title="@string/clockdate_frag_title"
         android:summary="@string/clock_frag_summary" />

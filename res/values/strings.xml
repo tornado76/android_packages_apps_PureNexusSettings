@@ -123,6 +123,18 @@
     <string name="wait_title">Hold on a sec</string>
     <string name="wait_message">Loading stuff and checking for root&#8230;</string>
 
+  <!-- carrierlabel fragment -->
+    <string name="carrierlabelfrag_title">Carrier Label</string>
+    <string name="carrier_options_summary">Customize the carrier label</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_title">Carrier label</string>
+    <string name="show_carrier_disabled">Disabled</string>
+    <string name="show_carrier_keyguard">Lockscreen only</string>
+    <string name="show_carrier_statusbar">Statusbar only</string>
+    <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
+
   <!-- cLock -->
     <string name="clock_frag_title">cLock</string>
 
