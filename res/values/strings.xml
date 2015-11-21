@@ -403,6 +403,8 @@
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="volume_keys_control_ring_stream_title">Volume keys control ringtone volume</string>
     <string name="volume_keys_control_ring_stream_summary">If on, volume keys control ringtone volume. If off, volume keys control media volume.</string>
+    <string name="swap_volume_buttons_title">Volume button swap</string>
+    <string name="swap_volume_buttons_summary">Adjust volume buttons action based on current rotation</string>
 
   <!-- widget strings -->
     <string name="widget_title_info">Pick a target</string>
