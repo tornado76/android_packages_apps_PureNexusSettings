@@ -423,6 +423,8 @@
     <string name="volume_keys_control_ring_stream_summary">If on, volume keys control ringtone volume. If off, volume keys control media volume.</string>
     <string name="swap_volume_buttons_title">Volume button swap</string>
     <string name="swap_volume_buttons_summary">Adjust volume buttons action based on current rotation</string>
+    <string name="volbtn_down_zen_title">Volume down in silent</string>
+    <string name="volbtn_down_zen_summary">allow volume down to enter do not disturb mode</string>
 
   <!-- widget strings -->
     <string name="widget_title_info">Pick a target</string>
