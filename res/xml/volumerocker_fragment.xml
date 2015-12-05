@@ -48,6 +48,13 @@
         android:summary="@string/volbtn_down_zen_summary"
         android:defaultValue="false"/>
 
+    <com.android.purenexussettings.preferences.SystemSettingSwitchPreference
+        android:key="volume_up_leave_zen"
+        android:title="@string/volbtn_up_zen_title"
+        android:summary="@string/volbtn_up_zen_summary"
+        android:defaultValue="false"
+        android:dependency="volume_down_zen" />
+
     <ListPreference
         android:key="volume_key_cursor_control"
         android:dialogTitle="@string/volbtn_cursor_control_title"
