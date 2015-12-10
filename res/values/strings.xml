@@ -343,6 +343,8 @@
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
+    <string name="quick_settings_title">Quick Settings</string>
+    <string name="quick_settings_summary">Configure quick settings tiles</string>
 
   <!-- Notification fragment -->
     <string name="notif_frag_title">Media &amp; notifications</string>
@@ -394,6 +396,8 @@
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_icon_blacklist_title">Status bar icons</string>
+    <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
 
   <!-- toolbar menu strings -->
     <string name="action_settings">Settings</string>

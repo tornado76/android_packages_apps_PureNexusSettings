@@ -44,6 +44,14 @@
     <PreferenceCategory
         android:title="@string/qs_panel_title">
 
+        <PreferenceScreen
+                android:title="@string/quick_settings_title"
+                android:summary="@string/quick_settings_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.QsActivity" />
+        </PreferenceScreen>
+
         <com.android.purenexussettings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
