@@ -21,11 +21,6 @@
         android:key="disp"
         android:title="@string/display_category" >
 
-        <ListPreference
-            android:key="lcd_density"
-            android:title="@string/lcd_density"
-            android:persistent="false" />
-
         <Preference
             android:key="expanded_desktop"
             android:title="@string/power_menu_expanded_desktop">
