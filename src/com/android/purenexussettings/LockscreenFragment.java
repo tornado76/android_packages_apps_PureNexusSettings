@@ -18,18 +18,25 @@ package com.android.purenexussettings;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 
-public class LockscreenFragment extends PreferenceFragment {
+import com.android.purenexussettings.preferences.SeekBarPreference;
+
+public class LockscreenFragment extends PreferenceFragment
+            implements OnPreferenceChangeListener  {
+
     public LockscreenFragment(){}
 
     public static final int IMAGE_PICK = 1;
@@ -39,10 +46,12 @@ public class LockscreenFragment extends PreferenceFragment {
     private static final String WALLPAPER_PACKAGE_NAME = "com.slim.wallpaperpicker";
     private static final String WALLPAPER_CLASS_NAME = "com.slim.wallpaperpicker.WallpaperCropActivity";
     private static final String LSWEATHER = "ls_weather";
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
     private Preference mLsWeather;
+    private SeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,8 +65,14 @@ public class LockscreenFragment extends PreferenceFragment {
         mLsWeather = (Preference)findPreference(LSWEATHER);
 
         PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
-
         PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mMaxKeyguardNotifConfig = (SeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
         // check if wallpaper app installed
         try {
@@ -90,6 +105,18 @@ public class LockscreenFragment extends PreferenceFragment {
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mMaxKeyguardNotifConfig) {
+            int kgconf = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
+            return true;
+        }
+        return false;
     }
 
     @Override

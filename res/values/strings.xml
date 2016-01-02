@@ -257,6 +257,9 @@
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
 
     <!-- Lockscreen weather fragment -->
     <string name="lockscreen_weather_fragment_title">Lockscreen weather</string>
