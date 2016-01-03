@@ -24,6 +24,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
@@ -46,11 +47,13 @@ public class LockscreenFragment extends PreferenceFragment
     private static final String WALLPAPER_PACKAGE_NAME = "com.slim.wallpaperpicker";
     private static final String WALLPAPER_CLASS_NAME = "com.slim.wallpaperpicker.WallpaperCropActivity";
     private static final String LSWEATHER = "ls_weather";
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
     private Preference mLsWeather;
+    ListPreference mLockClockFonts;
     private SeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
@@ -67,6 +70,12 @@ public class LockscreenFragment extends PreferenceFragment
         PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                resolver, Settings.System.LOCK_CLOCK_FONTS, 0)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
 
         mMaxKeyguardNotifConfig = (SeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
         int kgconf = Settings.System.getInt(resolver,
@@ -110,6 +119,13 @@ public class LockscreenFragment extends PreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLockClockFonts) {
+            Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+        }
         if (preference == mMaxKeyguardNotifConfig) {
             int kgconf = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
