@@ -16,6 +16,8 @@
 
 package com.android.purenexussettings;
 
+import android.content.Context;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -24,10 +26,15 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 
+import com.android.purenexussettings.preferences.SystemSettingSwitchPreference;
+
 public class NotificationFragment extends PreferenceFragment implements
          OnPreferenceChangeListener {
 
     public NotificationFragment(){}
+
+    private FingerprintManager mFingerprintManager;
+    private SystemSettingSwitchPreference mFingerprintVib;
 
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
@@ -38,10 +45,17 @@ public class NotificationFragment extends PreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.notification_fragment);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
         mCameraSounds.setOnPreferenceChangeListener(this);
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SystemSettingSwitchPreference) prefScreen.findPreference("fingerprint_success_vib");
+        if (!mFingerprintManager.isHardwareDetected()){
+            prefScreen.removePreference(mFingerprintVib);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

@@ -424,6 +424,8 @@
     <string name="camera_sounds_summary">Enable system camera shutter sound</string>
     <string name="dbl_tap_vib_title">Double tap power for camera vibration</string>
     <string name="dbl_tap_vib_summary">Vibrate on double tap of power button when enabled</string>
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
   <!-- powermenu fragment -->
     <string name="powermenu_frag_title">PowerMenu</string>
