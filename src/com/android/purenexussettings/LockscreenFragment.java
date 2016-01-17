@@ -33,7 +33,9 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 
+import com.android.purenexussettings.Utils;
 import com.android.purenexussettings.preferences.SeekBarPreference;
+import com.android.purenexussettings.preferences.SystemSettingSwitchPreference;
 
 public class LockscreenFragment extends PreferenceFragment
             implements OnPreferenceChangeListener  {
@@ -55,6 +57,7 @@ public class LockscreenFragment extends PreferenceFragment
     private Preference mLsWeather;
     ListPreference mLockClockFonts;
     private SeekBarPreference mMaxKeyguardNotifConfig;
+    private SystemSettingSwitchPreference mLsTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,7 @@ public class LockscreenFragment extends PreferenceFragment
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
         mLsWeather = (Preference)findPreference(LSWEATHER);
 
+        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
         PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
@@ -82,6 +86,11 @@ public class LockscreenFragment extends PreferenceFragment
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
         mMaxKeyguardNotifConfig.setValue(kgconf);
         mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
+        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            generalCategory.removePreference(mLsTorch);
+        }
 
         // check if wallpaper app installed
         try {

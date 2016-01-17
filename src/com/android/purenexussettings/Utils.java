@@ -46,6 +46,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.net.Uri;
@@ -265,5 +268,27 @@ public final class Utils {
                 break;
         }
         activity.setRequestedOrientation(frozenRotation);
+    }
+
+    public static boolean deviceSupportsFlashLight(Context context) {
+        CameraManager cameraManager = (CameraManager) context.getSystemService(
+                Context.CAMERA_SERVICE);
+        try {
+            String[] ids = cameraManager.getCameraIdList();
+            for (String id : ids) {
+                CameraCharacteristics c = cameraManager.getCameraCharacteristics(id);
+                Boolean flashAvailable = c.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                Integer lensFacing = c.get(CameraCharacteristics.LENS_FACING);
+                if (flashAvailable != null
+                        && flashAvailable
+                        && lensFacing != null
+                        && lensFacing == CameraCharacteristics.LENS_FACING_BACK) {
+                    return true;
+                }
+            }
+        } catch (CameraAccessException e) {
+            // Ignore
+        }
+        return false;
     }
 }
