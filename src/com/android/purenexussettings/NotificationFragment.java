@@ -17,7 +17,6 @@
 package com.android.purenexussettings;
 
 import android.content.Context;
-import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.ListPreference;
@@ -35,9 +34,6 @@ public class NotificationFragment extends PreferenceFragment implements
 
     public NotificationFragment(){}
 
-    private FingerprintManager mFingerprintManager;
-    private SystemSettingSwitchPreference mFingerprintVib;
-
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
@@ -54,12 +50,6 @@ public class NotificationFragment extends PreferenceFragment implements
         mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
         mCameraSounds.setOnPreferenceChangeListener(this);
-
-        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintVib = (SystemSettingSwitchPreference) prefScreen.findPreference("fingerprint_success_vib");
-        if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(mFingerprintVib);
-        }
 
         mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
         int notificationThreshold = Settings.System.getInt(getActivity().getContentResolver(),

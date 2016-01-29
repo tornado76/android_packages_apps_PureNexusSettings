@@ -19,9 +19,11 @@ package com.android.purenexussettings;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -52,12 +54,14 @@ public class LockscreenFragment extends PreferenceFragment
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
+    private FingerprintManager mFingerprintManager;
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
     private Preference mLsWeather;
     ListPreference mLockClockFonts;
     private SeekBarPreference mMaxKeyguardNotifConfig;
     private SystemSettingSwitchPreference mLsTorch;
+    private SystemSettingSwitchPreference mFingerprintVib;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,12 @@ public class LockscreenFragment extends PreferenceFragment
         mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
         if (!Utils.deviceSupportsFlashLight(getActivity())) {
             generalCategory.removePreference(mLsTorch);
+        }
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SystemSettingSwitchPreference) prefScreen.findPreference("fingerprint_success_vib");
+        if (!mFingerprintManager.isHardwareDetected()){
+            generalCategory.removePreference(mFingerprintVib);
         }
 
         // check if wallpaper app installed

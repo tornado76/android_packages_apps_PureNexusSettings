@@ -264,6 +264,8 @@
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Lockscreen clock font</string>
@@ -420,6 +422,8 @@
 
   <!-- Notification fragment -->
     <string name="notif_frag_title">Media &amp; notifications</string>
+    <string name="media_cat_title">Media options</string>
+    <string name="notif_cat_title">Notification options</string>
     <string name="battery_saver_notif_title">Battery saver notification</string>
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
     <string name="battery_low_notif_title">Low battery notification</string>
@@ -428,8 +432,6 @@
     <string name="camera_sounds_summary">Enable system camera shutter sound</string>
     <string name="dbl_tap_vib_title">Double tap power for camera vibration</string>
     <string name="dbl_tap_vib_summary">Vibrate on double tap of power button when enabled</string>
-    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
     <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
     <string name="less_notification_sounds_title">Less frequent notification sounds</string>
