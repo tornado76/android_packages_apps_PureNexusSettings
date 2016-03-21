@@ -35,6 +35,8 @@ import com.android.purenexussettings.preferences.SystemSettingSwitchPreference;
 import com.android.internal.util.purenexus.PowerMenuConstants;
 import static com.android.internal.util.purenexus.PowerMenuConstants.*;
 
+import com.android.internal.widget.LockPatternUtils;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +63,8 @@ public class PowerMenuFragment extends PreferenceFragment {
     private String[] mAvailableActions;
     private String[] mAllActions;
 
+    private static final int MY_USER_ID = UserHandle.myUserId();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,11 +72,16 @@ public class PowerMenuFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.powermenu_fragment);
         mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
         final PreferenceCategory actionCategory =
                 (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
         final PreferenceCategory powerCategory =
                 (PreferenceCategory) prefScreen.findPreference(POWER_CATEGORY);
+
+        if (!lockPatternUtils.isSecure(MY_USER_ID)) {
+            prefScreen.removePreference(powerCategory);
+        }
 
 		// power items
         mAvailableActions = getActivity().getResources().getStringArray(

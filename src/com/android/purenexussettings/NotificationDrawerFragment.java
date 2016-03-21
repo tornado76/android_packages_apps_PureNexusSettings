@@ -21,28 +21,39 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.purenexussettings.R;
+import com.android.purenexussettings.preferences.SecureSettingSwitchPreference;
+
+import com.android.internal.widget.LockPatternUtils;
 
 public class NotificationDrawerFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public NotificationDrawerFragment(){}
 
+    private static final String QS_CAT = "qs_category";
+
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String PREF_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String PREF_CUSTOM_HEADER_DEFAULT = "status_bar_custom_header_default";
+    private static final String PREF_QSCOLUMNS = "sysui_qs_num_columns";
+    private static final String PREF_QSLOCK = "status_bar_locked_on_secure_keyguard";
 
     private ListPreference mQuickPulldown;
     ListPreference mSmartPulldown;
     private SwitchPreference mCustomHeader;
     private SwitchPreference mCustomHeaderDefault;
     private ListPreference mNumColumns;
+    private SecureSettingSwitchPreference mQsLock;
+
+    private static final int MY_USER_ID = UserHandle.myUserId();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,10 +66,13 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
-        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
+        PreferenceCategory qscat = (PreferenceCategory) findPreference(QS_CAT);
+
+        mQuickPulldown = (ListPreference) prefScreen.findPreference(QUICK_PULLDOWN);
         mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
 
         mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -73,17 +87,17 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
 
-        mCustomHeader = (SwitchPreference) prefSet.findPreference(PREF_CUSTOM_HEADER);
+        mCustomHeader = (SwitchPreference) prefScreen.findPreference(PREF_CUSTOM_HEADER);
         mCustomHeader.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1));
         mCustomHeader.setOnPreferenceChangeListener(this);
 
-        mCustomHeaderDefault = (SwitchPreference) prefSet.findPreference(PREF_CUSTOM_HEADER_DEFAULT);
+        mCustomHeaderDefault = (SwitchPreference) prefScreen.findPreference(PREF_CUSTOM_HEADER_DEFAULT);
         mCustomHeaderDefault.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0) == 1));
         mCustomHeaderDefault.setOnPreferenceChangeListener(this);
 
-        mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
+        mNumColumns = (ListPreference) findPreference(PREF_QSCOLUMNS);
         int numColumns = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
                 UserHandle.USER_CURRENT);
@@ -91,6 +105,10 @@ public class NotificationDrawerFragment extends PreferenceFragment implements
         updateNumColumnsSummary(numColumns);
         mNumColumns.setOnPreferenceChangeListener(this);
 
+        mQsLock = (SecureSettingSwitchPreference) prefScreen.findPreference(PREF_QSLOCK);
+        if (!lockPatternUtils.isSecure(MY_USER_ID)) {
+            qscat.removePreference(mQsLock);
+        }
     }
 
     @Override

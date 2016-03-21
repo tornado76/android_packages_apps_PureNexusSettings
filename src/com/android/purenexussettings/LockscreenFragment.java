@@ -27,6 +27,7 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -40,19 +41,27 @@ import com.android.purenexussettings.Utils;
 import com.android.purenexussettings.preferences.SeekBarPreference;
 import com.android.purenexussettings.preferences.SystemSettingSwitchPreference;
 
+import com.android.internal.widget.LockPatternUtils;
+
 public class LockscreenFragment extends PreferenceFragment
             implements OnPreferenceChangeListener  {
 
     public LockscreenFragment(){}
 
     public static final int IMAGE_PICK = 1;
+    private static final int MY_USER_ID = UserHandle.myUserId();
 
+    private static final String LS_OPTIONS_CAT = "lockscreen_options";
+    private static final String LS_SECURE_CAT = "lockscreen_secure_options";
+    private static final String LS_WALLPAPER_CAT = "lockscreen_wallpaper";
+
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+    private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
     private static final String WALLPAPER_PACKAGE_NAME = "com.slim.wallpaperpicker";
     private static final String WALLPAPER_CLASS_NAME = "com.slim.wallpaperpicker.WallpaperCropActivity";
-    private static final String LSWEATHER = "ls_weather";
-    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    private static final String LSITEMS = "ls_items";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
@@ -61,14 +70,13 @@ public class LockscreenFragment extends PreferenceFragment
     private FingerprintManager mFingerprintManager;
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
-    private Preference mLsWeather;
-    ListPreference mLockClockFonts;
+    private Preference mLsItems;
     private SeekBarPreference mMaxKeyguardNotifConfig;
     private SystemSettingSwitchPreference mLsTorch;
     private SystemSettingSwitchPreference mFingerprintVib;
     private SeekBarPreference mLsAlpha;
     private SeekBarPreference mLsSecurityAlpha;
-    ListPreference mLsBouncer;
+    private ListPreference mLsBouncer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,21 +85,17 @@ public class LockscreenFragment extends PreferenceFragment
 
         addPreferencesFromResource(R.xml.lockscreen_fragment);
 
-        mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
-        mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
-        mLsWeather = (Preference)findPreference(LSWEATHER);
-
-        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
-        PreferenceCategory customizationCategory = (PreferenceCategory) findPreference("lockscreen_cus");
-        PreferenceCategory mPrefCat = (PreferenceCategory) findPreference("lockscreen_wallpaper");
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
-        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-                resolver, Settings.System.LOCK_CLOCK_FONTS, 4)));
-        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-        mLockClockFonts.setOnPreferenceChangeListener(this);
+        PreferenceCategory optionsCategory = (PreferenceCategory) findPreference(LS_OPTIONS_CAT);
+        PreferenceCategory secureCategory = (PreferenceCategory) findPreference(LS_SECURE_CAT);
+        PreferenceCategory wallpaperCategory = (PreferenceCategory) findPreference(LS_WALLPAPER_CAT);
+
+        mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
+        mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+        mLsItems = (Preference) findPreference(LSITEMS);
 
         mMaxKeyguardNotifConfig = (SeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
         int kgconf = Settings.System.getInt(resolver,
@@ -99,15 +103,15 @@ public class LockscreenFragment extends PreferenceFragment
         mMaxKeyguardNotifConfig.setValue(kgconf);
         mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
-        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
+        mLsTorch = (SystemSettingSwitchPreference) findPreference(KEYGUARD_TORCH);
         if (!Utils.deviceSupportsFlashLight(getActivity())) {
-            generalCategory.removePreference(mLsTorch);
+            optionsCategory.removePreference(mLsTorch);
         }
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintVib = (SystemSettingSwitchPreference) prefScreen.findPreference("fingerprint_success_vib");
+        mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
         if (!mFingerprintManager.isHardwareDetected()){
-            generalCategory.removePreference(mFingerprintVib);
+            secureCategory.removePreference(mFingerprintVib);
         }
 
         mLsBouncer = (ListPreference) findPreference(PREF_LS_BOUNCER);
@@ -129,6 +133,10 @@ public class LockscreenFragment extends PreferenceFragment
         mLsSecurityAlpha.setValue((int)(100 * alpha2));
         mLsSecurityAlpha.setOnPreferenceChangeListener(this);
 
+        if (!lockPatternUtils.isSecure(MY_USER_ID)) {
+            prefScreen.removePreference(secureCategory);
+        }
+
         // check if wallpaper app installed
         try {
             PackageInfo pi = getActivity().getPackageManager().getPackageInfo(WALLPAPER_PACKAGE_NAME, 0);
@@ -139,15 +147,15 @@ public class LockscreenFragment extends PreferenceFragment
 
         // if not remove wallpaper options
         if (!slimWallInstalled) {
-            prefScreen.removePreference(mPrefCat);
+            prefScreen.removePreference(wallpaperCategory);
         }
 
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mLsWeather) {
-            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.lockscreen_weather_fragment_title));
+        if (preference == mLsItems) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.lockscreen_items_fragment_title));
             return true;
         }
         if (preference == mSetWallpaper) {
@@ -165,16 +173,9 @@ public class LockscreenFragment extends PreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLockClockFonts) {
-            Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockClockFonts.setValue(String.valueOf(newValue));
-            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-            return true;
-        }
         if (preference == mMaxKeyguardNotifConfig) {
             int kgconf = (Integer) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
             return true;
         } else if (preference == mLsBouncer) {

@@ -62,6 +62,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="qs_category"
         android:title="@string/qs_panel_title">
 
         <PreferenceScreen

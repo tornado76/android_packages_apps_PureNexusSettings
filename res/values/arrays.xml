@@ -46,7 +46,7 @@
         <item>@string/navbarbuttonfrag_title</item>
         <item>@string/carrierlabelfrag_title</item>
         <item>@string/volume_steps_fragment_title</item>
-        <item>@string/lockscreen_weather_fragment_title</item>
+        <item>@string/lockscreen_items_fragment_title</item>
         <item>@string/lockscreen_frag_title</item>
         <item>@string/notifdraw_frag_title</item>
         <item>@string/recents_frag_title</item>
@@ -75,7 +75,7 @@
         <item>NavbarButtonFragment</item>
         <item>CarrierLabelFragment</item>
         <item>VolumeStepsFragment</item>
-        <item>LockscreenWeatherFragment</item>
+        <item>LockscreenItemsFragment</item>
         <item>LockscreenFragment</item>
         <item>NotificationDrawerFragment</item>
         <item>RecentsFragment</item>

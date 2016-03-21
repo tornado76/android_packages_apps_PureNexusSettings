@@ -247,34 +247,38 @@
     
   <!-- Lockscreen Fragment -->
     <string name="lockscreen_frag_title">Lockscreen</string>
-    <string name="lockscreen_gen_title">Lockscreen general options</string>
-    <string name="lockscreen_cus_title">Lockscreen customization options</string>
+    <string name="lockscreen_options_title">Lockscreen options</string>
+    <string name="lockscreen_secure_options_title">Secure Lockscreen options</string>
+    <!-- Lockscreen shortcuts (cm) -->
     <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
+    <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_set_title">Set lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Reset lock screen wallpaper</string>
     <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper reset</string>
+    <!-- pin scramble layout -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+    <!-- quick pin unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Enable at your own discretion. pins with more than 4 digits can cause issues</string>
+    <!-- Lockscreen album art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+    <!-- Lockscreen tap-to sleep -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+    <!-- Max lockscreen notifications -->
     <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
     <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+    <!-- Lockscreen torch -->
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+    <!-- Fingerprint vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
-    <string name="hide_lockscreen_clock_title">Lockscreen clock</string>
-    <string name="hide_lockscreen_clock_summary">Enable clock on lockscreen</string>
-    <string name="hide_lockscreen_date_title">Lockscreen date</string>
-    <string name="hide_lockscreen_date_summary">Enable date on lockscreen</string>
-    <string name="hide_lockscreen_alarm_title">Lockscreen alarm text</string>
-    <string name="hide_lockscreen_alarm_summary">Enable alarm text on lockscreen</string>
+    <!-- Lockscreen bouncer -->
     <string name="ls_bouncer_title">Secure lockscreen bouncer</string>
     <string name="ls_bouncer_summary">Open lockscreen directly to pin/pattern/password when there are %1$s notifications present</string>
     <string name="ls_bouncer_on">On (default)</string>
@@ -284,10 +288,27 @@
     <string name="ls_bouncer_dismissable">No dismissable</string>
     <string name="ls_bouncer_persistent">No persistent</string>
     <string name="ls_bouncer_all">No dismissable or persistent</string>
+    <!-- Lockscreen alpha -->
     <string name="lockscreen_alpha">Lockscreen alpha</string>
     <string name="lockscreen_security_alpha">Lockscreen bouncer alpha</string>
 
-    <!-- Lock Clock Fonts -->
+  <!-- Lockscreen items fragment -->
+    <string name="lockscreen_items_fragment_title">Lockscreen Items</string>
+    <string name="lockscreen_items_summary">Clock &amp; weather layouts</string>
+    <string name="ls_weather_category">Lockscreen weather</string>
+    <string name="ls_clock_category">Lockscreen clock</string>
+    <!-- Lockscreen weather -->
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_condition_icon_title">Weather condition icon</string>
+    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
+    <string name="weather_condition_icon_colored_title">Colored</string>
+    <string name="weather_condition_icon_vclouds_title">VClouds</string>
+    <!-- Lockscreen clock, date, alarm text -->
+    <string name="hide_lockscreen_clock_title">Lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Lockscreen date</string>
+    <string name="hide_lockscreen_alarm_title">Lockscreen alarm text</string>
+    <!-- Lockscreen clock fonts -->
     <string name="lock_clock_font_title">Lockscreen clock font</string>
     <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
     <string name="lock_clock_font_normal">Roboto</string>
@@ -308,18 +329,6 @@
     <string name="lock_clock_font_black_italic">Roboto Black Italic</string>
     <string name="lock_clock_font_condensed_light_normal">Roboto Condensed Light</string>
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
-
-    <!-- Lockscreen weather fragment -->
-    <string name="lockscreen_weather_fragment_title">Lockscreen weather</string>
-    <string name="lockscreen_weather_summary">Customize lockscreen weather elements</string>
-    <string name="weather_show_weather_title">Show weather</string>
-    <string name="weather_show_weather_summary">Display weather on lockscreen</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Display weather location</string>
-    <string name="weather_condition_icon_title">Weather condition icon</string>
-    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
-    <string name="weather_condition_icon_colored_title">Colored</string>
-    <string name="weather_condition_icon_vclouds_title">VClouds</string>
 
   <!-- Navdrawer categories -->
     <string name="interface_cat_title">Interface</string>
