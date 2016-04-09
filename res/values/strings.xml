@@ -217,6 +217,8 @@
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+    <string name="three_finger_gesture">Three finger screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers across the screen to screenshot</string>
 
   <!-- Error strings -->
     <string name="no_browser_error">You cheeky bloke - you need a browser installed for these to work!</string>
