@@ -20,22 +20,13 @@
 
   <!-- About Frag strings -->
     <string name="about_frag_title">About</string>
-    <string name="pushbullet_data" translatable="false">https://www.pushbullet.com/channel?tag=purenexus</string>
-    <string name="gplus_data" translatable="false">https://plus.google.com/communities/103055954354785266764</string>
-    <string name="twit_data" translatable="false">https://twitter.com/BeansTown106</string>
-    <string name="payp_data" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4395895</string>
     <string name="miscinfo_title">App Info</string>
     <string name="miscinfo_summary">Click here for changelog and app-specific credits</string>
     <string name="nexus_about">PureNexus info</string>
     <string name="nexus_about_summary">Misc info about the rom, developer and contributors</string>
-    <string name="nexus_useful">Useful links</string>
-    <string name="nexus_updates">Pushbullet update notifications</string>
     <string name="lead_dev">Lead Developer</string>
     <string name="beans">BeansTown106</string>
     <string name="beans_sum">Main PureNexus maintainer</string>
-    <string name="beans_twit">BeansTown\'s Twitter</string>
-    <string name="nexus_gplus">PureNexus Google+ community</string>
-    <string name="donate">Donate to support development</string>
     <string name="contribute">Contributors</string>
     <string name="devonte">Dwitherell</string>
     <string name="devonte_sum">Coder/tweaker</string>
