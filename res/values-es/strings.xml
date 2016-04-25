@@ -23,7 +23,7 @@
     <string name="miscinfo_title">Información de la aplicación</string>
     <string name="miscinfo_summary">Haga clic aquí para obtener detalles de la aplicación y créditos</string>
     <string name="nexus_about">Información de PureNexus</string>
-    <string name="nexus_about_summary">Misc info about the rom, developer and contributors</string>
+    <string name="nexus_about_summary">Varia información acerca de la rom, desarrollador y colaboradores</string>
     <string name="click1">No sería interesante si esto hizo algo?&#8230;</string>
     <string name="click2">Aunque pulses %1$d veces no va a hacer nada&#8230; dejalo ya</string>
     <string name="click3">&#8230; %1$d veces ? Bien, simplemente dejar de fumar. Voy a actuar como si nada, asi que dejado ya</string>
@@ -279,9 +279,9 @@
     <string name="weather_condition_icon_colored_title">Colorido</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
     <!-- Lockscreen clock, date, alarm text -->
-    <string name="hide_lockscreen_clock_title">Mostrar reloj en la pantalla de bloqueo</string>
-    <string name="hide_lockscreen_date_title">Mostrar fecha en la pantalla de bloqueo</string>
-    <string name="hide_lockscreen_alarm_title">Mostrar alarma en la pantalla de bloqueo</string>
+    <string name="hide_lockscreen_clock_title">Mostrar reloj</string>
+    <string name="hide_lockscreen_date_title">Mostrar fecha</string>
+    <string name="hide_lockscreen_alarm_title">Mostrar alarma</string>
     <!-- Lockscreen clock fonts -->
     <string name="lock_clock_font_title">Fuente del reloj</string>
     <string name="lock_clock_font_summary">Cambiar la fuente predeterminada del reloj de la pantalla de bloqueo</string>
