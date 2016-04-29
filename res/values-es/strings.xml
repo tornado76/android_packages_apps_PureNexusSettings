@@ -82,7 +82,7 @@
     <string name="status_bar_battery_percentage_text_inside">Dentro del icono</string>
     <string name="status_bar_battery_percentage_text_next">Al lado del icono</string>
     <string name="battery_bar_title">Opciones de la barra de batería</string>
-    <string name="battery_bar_location">Localización de la barra de batería</string>
+    <string name="battery_bar_location">Ubicación de la barra de batería</string>
     <string name="battery_bar_color">Color de la barra de batería</string>
     <string name="battery_bar_style_title">Estilo de la barra de batería</string>
     <string name="battery_bar_thickness_title">Espesor de la barra de la batería</string>
@@ -273,7 +273,7 @@
     <string name="ls_clock_category">Reloj en la pantalla de bloqueo</string>
     <!-- Lockscreen weather -->
     <string name="weather_show_weather_title">Mostrar clima</string>
-    <string name="weather_show_location_title">Mostrar localización</string>
+    <string name="weather_show_location_title">Mostrar ubicación</string>
     <string name="weather_condition_icon_title">Icono de condición</string>
     <string name="weather_condition_icon_monochrome_title">Monocromo</string>
     <string name="weather_condition_icon_colored_title">Colorido</string>
@@ -373,7 +373,7 @@
     <string name="network_traffic_hidearrow_summary">Ocultar las flechas en el indicador de tráfico</string>
 
   <!-- Notification drawer fragment -->
-    <string name="notifdraw_frag_title">Notificaciones e interruptores</string>
+    <string name="notifdraw_frag_title">Notificaciones e Interruptores</string>
     <string name="notification_panel_title">Panel de Notificaciones</string>
     <string name="qs_panel_title">Panel de ajustes rapidos</string>
     <string name="quick_pulldown_title">Despliegue rápido</string>
@@ -404,8 +404,8 @@
     <string name="block_on_secure_keyguard_summary">Desactivar ajustes rapidos con pantalla de bloqueo segura</string>
     <string name="qs_main_tiles_title">Ampliar la primera fila</string>
     <string name="qs_main_tiles_summary">Dos interruptores en la primera fila</string>
-    <string name="qs_advanced_location_title">Configuración avanzada de la localización</string>
-    <string name="qs_advanced_location_summary">Activar la configuración avanzada de la localización en los ajustes rápidos</string>
+    <string name="qs_advanced_location_title">Configuración avanzada de la ubicación</string>
+    <string name="qs_advanced_location_summary">Activar la configuración avanzada de la ubicación en los ajustes rápidos</string>
     <string name="quick_settings_title">Ajustes rápidos</string>
     <string name="quick_settings_summary">Configurar interruptores en ajustes rapidos</string>
     <string name="qs_num_columns_title">Numero de interruptores por fila</string>
@@ -446,7 +446,7 @@
     <string name="power_menu_bug_report_title">Reportar fallo</string>
     <string name="power_menu_sound_title">Panel de sonido</string>
     <string name="power_menu_bug_report_disabled">Reportar error está desactivado en los ajustes de desarrollo</string>
-    <string name="lockscreen_enable_power_menu_title">Mostrar menú de apagado en la pantalla de bloqueo</string>
+    <string name="lockscreen_enable_power_menu_title">Mostrar en la pantalla de bloqueo</string>
 
   <!-- Recents fragment -->
     <string name="recents_frag_title">Aplicaciones recientes</string>
