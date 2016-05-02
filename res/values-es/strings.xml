@@ -480,7 +480,7 @@
     <string name="recent_panel_expanded_mode_auto">Automático (predeterminado)</string>
     <string name="recent_panel_expanded_mode_always">Siempre</string>
     <string name="recent_panel_expanded_mode_never">Nunca</string>
-    <string name="recent_panel_show_topmost_title">Mostrar aplicación en usok</string>
+    <string name="recent_panel_show_topmost_title">Mostrar aplicación en uso</string>
     <string name="recent_panel_show_topmost_summary">Incluir la aplicación en uso en primer plano en el panel de aplicaciones recientes</string>
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierd</string>
     <string name="recent_panel_lefty_mode_summary">Mostrar el panel de aplicaciones recientes en el lado izquierdo</string>
@@ -517,16 +517,16 @@
 
   <!-- volumerocker fragment -->
     <string name="volrock_frag_title">Desbloquear con volumen</string>
-    <string name="volbtn_wake_device_title">Despertar con botones de volumen</string>
-    <string name="button_wake_summary">Overrides music control</string>
+    <string name="volbtn_wake_device_title">Despertar dispositivo</string>
+    <string name="button_wake_summary">Reemplazar control de reproducción</string>
     <string name="volbtn_music_controls_title">Control de Música</string>
     <string name="volbtn_music_controls_summary">Cuando la pantalla está apagada, una pulsación larga en las teclas de volumen cambiará de canción</string>
     <string name="volbtn_cursor_control_title">Control de cursor en el teclado</string>
     <string name="volbtn_cursor_control_off">Desactivado</string>
     <string name="volbtn_cursor_control_on">Volumen arriba/abajo mueve el cursor a izquierda/derecha</string>
     <string name="volbtn_cursor_control_on_reverse">Volumen arriba/abajo mueve el cursor a derecha/izquierda</string>
-    <string name="volume_keys_control_ring_stream_title">Teclas de volumen controlan el volumen del tono de llamada</string>
-    <string name="volume_keys_control_ring_stream_summary">Si está encendido, las teclas de volumen controlan el tono de llamada. Si está apagado, controlarán el volumen multimedia.</string>
+    <string name="volume_keys_control_ring_stream_title">Controlar volumen de llamada</string>
+    <string name="volume_keys_control_ring_stream_summary">Si está activado, las teclas de volumen controlan el volumen del tono de llamada. En caso contrario las teclas de volumen controlan el volumen multimedia.</string>
     <string name="swap_volume_buttons_title">Intercambio del botón de Volumen</string>
     <string name="swap_volume_buttons_summary">Ajustar los botones del volumen en base a la rotación de la pantalla</string>
     <string name="volbtn_down_zen_title">No molestar</string>
