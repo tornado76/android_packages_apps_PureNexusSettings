@@ -29,7 +29,7 @@
     <string name="click3">&#8230; %1$d veces ? Bien, simplemente dejar de fumar. Voy a actuar como si nada, asi que dejado ya</string>
 
   <!-- App picker intent stuff -->
-    <string name="apppicker_frag_title">Seleccionar aplicaciones</string>
+    <string name="apppicker_frag_title">Selector de aplicaciones</string>
     <string name="apppick_custom">Personalizado</string>
     <string name="apppick_apps">Aplicaciones</string>
     <string name="apppick_shortcuts">Accesos directos</string>
@@ -39,32 +39,32 @@
     <string name="picker_summary">Sin establecer</string>
 
   <!--App info dialog fragment -->
-    <string name="alertdiagtitle">Historial de cambios v1.0</string>
+    <string name="alertdiagtitle">Registro de cambios v1.0</string>
     <string name="setpositive">Aceptar</string>
-    <string name="setnegative">Creditos</string>
+    <string name="setnegative">Agradecimientos</string>
     <string name="changelog"><![CDATA[
-&#8226; Made a groovy little settings app<br />
-&#8226; Did lots of minor UI things<br />
-&#160; &#8226; Animated fragment switching and backstack handling<br />
-&#160; &#8226; Actionbar options when interacting with navdrawer<br />
-&#8226; Modified margaritov/SlimRom color picker<br />
-&#160; &#8226; Added alpha slider text - represents current alpha as percentage<br />
-&#160; &#8226; Fixed minor hex-picking int-to-HSV-to-int issue<br />
-&#160; &#8226; Edited color picker layout to show better in landscape<br />
-&#160; &#8226; Added reset button for default color in color picker<br />
-&#160; &#8226; Custom preview options setable via longpress<br />
-&#8226; Added ability to hide/show app in app drawer<br />
-&#8226; Added some fun extras<br />
-&#8226; Incorporated Chainfire\'s libsuperuser to handle root tasks<br />]]></string>
-    <string name="creditos"><![CDATA[
-&#8226; Chainfire for the easy-to-implement libsuperuser library<br />
-&#8226; margaritov/slim rom for the color picker base<br />
-&#8226; Beans for the rom and an excuse to tinker<br />
-&#8226; Cheekybastards for living up to their namesake<br />
-&#8226; DaveyAnnihilation for all the help with setting things up theme-friendly and general aesthetics<br />
-&#8226; Gunthermic, for testing and great ideas with the colorpicker<br />
-&#8226; All contributors to stackoverflow or various other java/android app making resources<br />
-&#8226; Those not mentioned but should have been<br />]]></string>
+&#8226; Una pequeña aplicación de ajustes muy chula<br />
+&#8226; Un montón de ajustes menores de la interfaz<br />
+&#160; &#8226; Cambio entre fragments y manejo de lista animados<br />
+&#160; &#8226; Opciones en la actionbar cuando se interactúa con el cajón de navegación<br />
+&#8226; Selector de color de margaritov/SlimRom modificado<br />
+&#160; &#8226; Añadido texto al selector de transparencia con porcentajes<br />
+&#160; &#8226; Arreglado un problema menor con el hex-picking int-to-HSV-to-int<br />
+&#160; &#8226; Diseño del selector de color editado para que se vea mejor en horizontal<br />
+&#160; &#8226; Añadido botón de reinicio al color por defecto en el selector<br />
+&#160; &#8226; Opciones de previsualización ajustables por pulsación larga<br />
+&#8226; Añadida opción para mostrar u ocultar aplicación en el cajón de aplicaciones<br />
+&#8226; Añadidos algunos extras divertidos<br />
+&#8226; libsuperuser de Chainfire incorporado para manejar tareas root<br />]]></string>
+  <string name="credits"><![CDATA[
+&#8226; Chainfire por la librería fácil de implementar libsuperuser<br />
+&#8226; margaritov/Slim ROM por la base del selector de colores<br />
+&#8226; Beans por la ROM y una excusa para cacharrear<br />
+&#8226; Cheekybastards (Descaradosbastardos) por estar a la altura de su nombre<br />
+&#8226; DaveyAnnihilation por toda su ayuda con la compatibilidad con los temas y por la estética en general<br />
+&#8226; Gunthermic, por el testeo y sus geniales ideas para el selector de color<br />
+&#8226; Todos los colaboradores de Stack Overflow u otros recursos para hacer apps en Java/Android<br />
+&#8226; Todos a los que no he mencionado pero deberían estar ahí<br />]]></string>
 
   <!-- Battery Fragment -->
     <string name="battery_frag_title">Batería</string>
@@ -97,17 +97,17 @@
 
   <!-- BuildProp editor -->
     <string name="buildprop_frag_title">Build prop</string>
-    <string name="buildprop_frag_title2">Editar build.prop</string>
-    <string name="editprop_key">Clave</string>
-    <string name="editprop_name">Nombre</string>
-    <string name="editprop_title">Añadir Propiedad</string>
+    <string name="buildprop_frag_title2">Editar el build prop</string>
+    <string name="editprop_key">Clave de la propiedad</string>
+    <string name="editprop_name">Nombre de la propiedad</string>
+    <string name="editprop_title">Editar o agregar propiedad</string>
     <string name="editprop_unsaved_changes_title">Cambios sin guardar</string>
-    <string name="editprop_unsaved_changes_message">Le gustaría establecer esta propiedad?</string>
-    <string name="editprop_delete_item_title">Eliminar</string>
-    <string name="editprop_delete_item_message">Quieres eliminar esta propiedad?</string>
-    <string name="restore_loc">build.prop restaurar a partir de %1$s</string>
-    <string name="edit_backup_loc">Guardar una copia de seguridad en %1$s</string>
-    <string name="backup_loc">build.prop Restablecer %1$s</string>
+    <string name="editprop_unsaved_changes_message">¿Quieres establecer esta propiedad?</string>
+    <string name="editprop_delete_item_title">Borrar elemento</string>
+    <string name="editprop_delete_item_message">¿Quieres eliminar esta propiedad?</string>
+    <string name="restore_loc">build.prop restaurado de %1$s</string>
+    <string name="edit_backup_loc">Edición guardada y copia de seguridad hecha en %1$s</string>
+    <string name="backup_loc">Copia de seguridad del build.prop en %1$s</string>
     <string name="wait_title">Espera un segundo</string>
     <string name="wait_message">Cargando y comprobando SuperUsuario&#8230;</string>
 
@@ -193,26 +193,26 @@
     <string name="three_finger_gesture_summary">Deslizar tres dedos para capturar la pantalla</string>
 
   <!-- Error strings -->
-    <string name="no_browser_error">Necesitas un navegador instalado!</string>
+    <string name="no_browser_error">Se necesita un navegador instalado!</string>
     <string name="no_root_error">Root no disponible? Algunas funciones no funcionarán como debieran!</string>
     <string name="general_error">Ocurrió un error</string>
     <string name="no_room_error">No queda espacio en \/system - No se puede editar</string>
-    <string name="no_backup_error">Error: No existe ningun respaldo!</string>
+    <string name="no_backup_error">Error: No existe copia de seguridad.</string>
 
   <!-- FiSwitch Frag strings -->
-    <string name="fiswitch_frag_title">Fi Switch</string>
+    <string name="fiswitch_frag_title">Interruptor fi</string>
     <string name="dial1">Sprint</string>
-    <string name="dial1_sum">Forar inicio en Sprint</string>
+    <string name="dial1_sum">Forzar salto a Sprint</string>
     <string name="dial2">T-Mobile</string>
-    <string name="dial2_sum">Forar inicio en T-Mobile</string>
-    <string name="dial3">Next carrier</string>
-    <string name="dial3_sum">Forar inicio a la proxima operadora</string>
-    <string name="dial4">Switch-Automatico</string>
-    <string name="dial4_sum">(Re) Activar conmutación automática</string>
+    <string name="dial2_sum">Forzar salto a T-Mobile</string>
+    <string name="dial3">Siguiente operadora</string>
+    <string name="dial3_sum">Salto de fuerza al portador de la siguiente</string>
+    <string name="dial4">Auto-switch</string>
+    <string name="dial4_sum">(Re) Habilitar la conmutación automática</string>
     <string name="dial5">Reparar</string>
-    <string name="dial5_sum">Restablece todo</string>
+    <string name="dial5_sum">Restablecer todo</string>
     <string name="dial6">Información</string>
-    <string name="dial6_sum">Información de red actual</string>
+    <string name="dial6_sum">Información actual de la red</string>
 
   <!-- General strings -->
     <string name="ok">Aceptar</string>
@@ -289,10 +289,10 @@
     <string name="lock_clock_font_bold">Roboto Negrita</string>
     <string name="lock_clock_font_italic">Roboto Cursiva</string>
     <string name="lock_clock_font_bold_italic">Roboto Negrita Cursiva</string>
-    <string name="lock_clock_font_light_normal">Roboto Ligera (por defecto)</string>
-    <string name="lock_clock_font_light_italic">Roboto Ligera Cursiva</string>
-    <string name="lock_clock_font_thin_normal">Roboto Delgada</string>
-    <string name="lock_clock_font_thin_italic">Roboto Delgada Cursiva</string>
+    <string name="lock_clock_font_light_normal">Roboto Suave (por defecto)</string>
+    <string name="lock_clock_font_light_italic">Roboto Suave Cursiva</string>
+    <string name="lock_clock_font_thin_normal">Roboto Fina</string>
+    <string name="lock_clock_font_thin_italic">Roboto Fina Cursiva</string>
     <string name="lock_clock_font_condensed_normal">Roboto Condensada</string>
     <string name="lock_clock_font_condensed_bold">Roboto Condensada Negrita</string>
     <string name="lock_clock_font_condensed_italic">Roboto Condensada Cursiva</string>
@@ -301,8 +301,8 @@
     <string name="lock_clock_font_medium_italic">Roboto Media Cursiva</string>
     <string name="lock_clock_font_black_normal">Roboto Negra</string>
     <string name="lock_clock_font_black_italic">Roboto Negra Cursiva</string>
-    <string name="lock_clock_font_condensed_light_normal">Roboto Condenseda Ligera</string>
-    <string name="lock_clock_font_condensed_light_italic">Roboto Condenseda Ligera Cursiva</string>
+    <string name="lock_clock_font_condensed_light_normal">Roboto Consensada Suave</string>
+    <string name="lock_clock_font_condensed_light_italic">Roboto Condensada Suave Cursiva</string>
 
   <!-- Navdrawer categories -->
     <string name="interface_cat_title">Interfaz</string>
@@ -319,8 +319,8 @@
     <string name="kill_app_longpress_back_summary">Finalizar la aplicación actual al mantener pulsado el botón atrás</string>
     <string name="long_press_kill_delay">Retraso para cerrar la aplicación</string>
     <!-- Recent longpress last app toggle -->
-    <string name="recents_longpress_title">Pulsación larga en Recientes</string>
-    <string name="recents_longpress_summary">Pulsación larga en Recientes para ir a la última aplicación abierta</string>
+    <string name="recents_longpress_title">Pulsación larga en recientes</string>
+    <string name="recents_longpress_summary">Pulsación larga en recientes para ir a la última aplicación abierta</string>
     <string name="ime_switcher_notify">Icono de selección</string>
     <string name="ime_switcher_notify_summary">Mostrar el icono de selección del método de entrada</string>
     <string name="double_tap_sleep_nav_bar_title">Doble toque para apagar la pantalla</string>
@@ -373,14 +373,14 @@
     <string name="network_traffic_hidearrow_summary">Ocultar las flechas en el indicador de tráfico</string>
 
   <!-- Notification drawer fragment -->
-    <string name="notifdraw_frag_title">Notificaciones e Interruptores</string>
-    <string name="notification_panel_title">Panel de Notificaciones</string>
-    <string name="qs_panel_title">Panel de ajustes rapidos</string>
+    <string name="notifdraw_frag_title">Cajón de notificaciones</string>
+    <string name="notification_panel_title">Panel de notificación</string>
+    <string name="qs_panel_title">Panel de ajustes rápidos</string>
     <string name="quick_pulldown_title">Despliegue rápido</string>
-    <string name="quick_pulldown_summary">Desplegar el panel de ajustes rápidos desde la %1$s de la barra de estado</string>
+    <string name="quick_pulldown_summary">El borde %1$s de la barra de notificaciones desplegará el panel de ajustes rápidos</string>
     <string name="quick_pulldown_summary_always">Mostrar siempre los ajustes rápidos al desplegar la barra de estado</string>
-    <string name="quick_pulldown_summary_left">Izquierda</string>
-    <string name="quick_pulldown_summary_right">Derecha</string>
+    <string name="quick_pulldown_summary_left">izquierdo</string>
+    <string name="quick_pulldown_summary_right">derecho</string>
     <string name="quick_pulldown_off">Deshabilitado</string>
     <string name="quick_pulldown_left">Izquierda</string>
     <string name="quick_pulldown_right">Derecha</string>
@@ -391,33 +391,33 @@
     <string name="smart_pulldown_dismissable">No descartable</string>
     <string name="smart_pulldown_persistent">No persistente</string>
     <string name="smart_pulldown_all">No descartable o persistente</string>
-    <string name="status_bar_show_weather_title">Mostrar Clima</string>
-    <string name="status_bar_show_weather_summary">Mostrar clima en la cabecera del panel de notificaciones</string>
-    <string name="notification_force_expand_title">Forzar expandir todas las notificaciones</string>
-    <string name="notification_force_expand_summary">Auto expandir notificaciones con todas las aplicaciones que lo soporten</string>
+    <string name="status_bar_show_weather_title">Mostrar el clima</string>
+    <string name="status_bar_show_weather_summary">Mostrar el clima en la cabecera del panel de notificaciones</string>
+    <string name="notification_force_expand_title">Forzar notificaciones expandidas</string>
+    <string name="notification_force_expand_summary">Expandir notificaciones automáticamente en aplicaciones compatibles</string>
     <string name="status_bar_custom_header_title">Fondo contextual del clima</string>
     <string name="status_bar_custom_header_summary">Habilitar imagen de fondo en la cabecera del panel de notificaciones</string>
     <string name="status_bar_custom_header_default_title">Imágenes de fondo contextual</string>
     <string name="status_bar_custom_header_default_summary">Habilitar para imágenes de alta definición poligráficas. Desactivar para las imágenes originales.</string>
     <string name="qs_brightness_slider_title">Mostrar barra de brillo</string>
-    <string name="block_on_secure_keyguard_title">Desactivar en la pantalla de bloqueo</string>
-    <string name="block_on_secure_keyguard_summary">Desactivar ajustes rapidos con pantalla de bloqueo segura</string>
+    <string name="block_on_secure_keyguard_title">Desactivar los ajustes rápidos</string>
+    <string name="block_on_secure_keyguard_summary">Deshabilita los ajustes rápidos en pantalla de bloqueo segura</string>
     <string name="qs_main_tiles_title">Ampliar la primera fila</string>
-    <string name="qs_main_tiles_summary">Dos interruptores en la primera fila</string>
-    <string name="qs_advanced_location_title">Configuración avanzada de la ubicación</string>
+    <string name="qs_main_tiles_summary">Dos controles principales en la primera fila</string>
+    <string name="qs_advanced_location_title">Configuración de ubicación avanzada</string>
     <string name="qs_advanced_location_summary">Activar la configuración avanzada de la ubicación en los ajustes rápidos</string>
     <string name="quick_settings_title">Ajustes rápidos</string>
-    <string name="quick_settings_summary">Configurar interruptores en ajustes rapidos</string>
-    <string name="qs_num_columns_title">Numero de interruptores por fila</string>
-    <string name="qs_num_columns_showing">%1$s interruptores mostrados por fila</string>
+    <string name="quick_settings_summary">Configuración de los controles de ajustes rápidos</string>
+    <string name="qs_num_columns_title">Número de controles por fila</string>
+    <string name="qs_num_columns_showing">Mostrar %1$s controles por fila</string>
     <string name="quick_settings_vibrate_title">Vibrar al tocar</string>
-    <string name="quick_settings_vibrate_summary">Vibrar al tocar los interruptores</string>
+    <string name="quick_settings_vibrate_summary">Vibrar al tocar los controles</string>
 
   <!-- Notification fragment -->
     <string name="notif_frag_title">Medios y notificaciones</string>
     <string name="media_cat_title">Opciones de medios</string>
     <string name="notif_cat_title">opciones de notificación</string>
-    <string name="battery_saver_notif_title">Notificación de Ahorro de Batería</string>
+    <string name="battery_saver_notif_title">Notificación de ahorro de Batería</string>
     <string name="battery_saver_notif_summary">Mostrar la notificación de ahorro de batería cuando esté habilitado</string>
     <string name="battery_low_notif_title">Notificación de batería baja</string>
     <string name="battery_low_notif_summary">Mostrar notificación de batería baja cuando esté habilitado</string>
@@ -516,7 +516,7 @@
     <string name="action_fabhide">Botón flotante</string>
 
   <!-- volumerocker fragment -->
-    <string name="volrock_frag_title">Desbloquear con volumen</string>
+    <string name="volrock_frag_title">Teclas de volumen</string>
     <string name="volbtn_wake_device_title">Despertar dispositivo</string>
     <string name="button_wake_summary">Reemplazar control de reproducción</string>
     <string name="volbtn_music_controls_title">Control de Música</string>
@@ -528,11 +528,11 @@
     <string name="volume_keys_control_ring_stream_title">Controlar volumen de llamada</string>
     <string name="volume_keys_control_ring_stream_summary">Si está activado, las teclas de volumen controlan el volumen del tono de llamada. En caso contrario las teclas de volumen controlan el volumen multimedia.</string>
     <string name="swap_volume_buttons_title">Intercambio del botón de Volumen</string>
-    <string name="swap_volume_buttons_summary">Ajustar los botones del volumen en base a la rotación de la pantalla</string>
+    <string name="swap_volume_buttons_summary">Intercambiar los botones del volumen en base a la rotación de la pantalla</string>
     <string name="volbtn_down_zen_title">No molestar</string>
     <string name="volbtn_down_zen_summary">Permitir entrar en el modo No molestar con el boton de volumen hacia abajo</string>
-    <string name="volbtn_up_zen_title">Desactiva No molestar</string>
-    <string name="volbtn_up_zen_summary">Desactiva el modo No molestar con el boton de volumen hacia arriba</string>
+    <string name="volbtn_up_zen_title">Desactivar no molestar</string>
+    <string name="volbtn_up_zen_summary">Desactiva el modo no molestar con el boton de volumen hacia arriba</string>
 
   <!-- Volume Steps Fragment -->
     <string name="volume_steps_fragment_title">Pasos de volumen</string>
