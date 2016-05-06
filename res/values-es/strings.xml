@@ -547,5 +547,5 @@
     <string name="volume_steps_reset">Restablecer</string>
 
   <!-- widget strings -->
-    <string name="widget_title_info">Elegir un objetivo</string>
+    <string name="widget_title_info">Elija un objetivo</string>
 </resources>
